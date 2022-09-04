@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - layer1
+  - layer2
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Layer1
+    uniqueID: 144552335
+    locked: 0
+  - name: Layer2
+    uniqueID: 1155139337
     locked: 0
