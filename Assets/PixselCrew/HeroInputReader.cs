@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HeroInputReader : MonoBehaviour
 {
    [SerializeField] private Hero _hero;
 
-    private void Update()
-    {
-        var h = Input.GetAxis("Horizontal");
-        _hero.SetDirection(h);
 
-        if (Input.GetButtonUp("Fire1")) {
+    public void OnHorizontalMovement(InputAction.CallbackContext context) {
+        var direction = context.ReadValue<float>();
+        _hero.SetDirection(direction);
+    }
+    public void OnSaySomethig(InputAction.CallbackContext context) {
+        if (context.canceled)
+        {
             _hero.SaySomething();
         }
     }
