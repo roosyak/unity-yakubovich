@@ -3,20 +3,15 @@ using UnityEngine.InputSystem;
 
 public class HeroInputReader : MonoBehaviour
 {
-   [SerializeField] private Hero _hero;
-    private float directX, directY;
+   [SerializeField] private Hero _hero; 
 
     public void OnHorizontalMovement(InputAction.CallbackContext context) {
-        directX = context.ReadValue<float>();
-        _hero.SetDirection(directX, directY);
+        var direction = context.ReadValue<Vector2>();
+        _hero.SetDirection(direction); 
     }
-    public void OnVerticalMovement(InputAction.CallbackContext context)
-    {
-        directY = context.ReadValue<float>();
-        _hero.SetDirection(directX, directY);
-    }
+
     public void OnSaySomethig(InputAction.CallbackContext context) {
-        if (context.canceled)
+        if (context.phase == InputActionPhase.Performed)
         {
             _hero.SaySomething();
         }
