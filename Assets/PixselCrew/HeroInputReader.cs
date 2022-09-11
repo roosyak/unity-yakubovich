@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HeroInputReader : MonoBehaviour
+namespace PixelCrew
 {
-    [SerializeField] private Hero _hero;
-
-    public void OnHorizontalMovement(InputAction.CallbackContext context)
+    public class HeroInputReader : MonoBehaviour
     {
-        var direction = context.ReadValue<Vector2>();
-        _hero.SetDirection(direction);
-    }
+        [SerializeField] private Hero _hero;
 
-    public void OnSaySomethig(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed)
+        public void OnHorizontalMovement(InputAction.CallbackContext context)
         {
-            _hero.SaySomething();
+            var direction = context.ReadValue<Vector2>();
+            _hero.SetDirection(direction);
+        }
+
+        public void OnSaySomethig(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                _hero.SaySomething();
+            }
         }
     }
+
 }
