@@ -9,6 +9,7 @@ namespace PixelCrew
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
+        private float _coins = 0f;
 
         private void Awake()
         {
@@ -49,6 +50,11 @@ namespace PixelCrew
         public void SaySomething()
         {
             Debug.Log("SaySomething");
+        }
+
+        public void AddCoin(float valCoin) {
+            _coins += valCoin;
+            Debug.Log(string.Format("монет: {0}", _coins));
         }
     }
 
