@@ -10,10 +10,15 @@ namespace PixelCrew
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
         private float _coins = 0f;
+        private Animator _animator;
 
+        private static int IsGroundKey = Animator.StringToHash("is-ground");
+        private static int VerticalVilocityKey = Animator.StringToHash("vertical-vilcity");
+        private static int IsRuningKey = Animator.StringToHash("is-runing");
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
         }
         public void SetDirection(Vector2 direction)
         {
@@ -24,9 +29,10 @@ namespace PixelCrew
         {
             _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
             var _isJumping = _direction.y > 0;
+            var isGround = IsGrounded();
             if (_isJumping)
             {
-                if (IsGrounded() && _rigidbody.velocity.y <= 0)
+                if (isGround && _rigidbody.velocity.y <= 0)
                 {
                     _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
                 }
@@ -35,6 +41,9 @@ namespace PixelCrew
             {
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
             }
+            _animator.SetBool(IsGroundKey, isGround);
+            _animator.SetFloat(VerticalVilocityKey, _rigidbody.velocity.y);
+            _animator.SetBool(IsRuningKey, _direction.x != 0);
         }
 
 
@@ -52,7 +61,8 @@ namespace PixelCrew
             Debug.Log("SaySomething");
         }
 
-        public void AddCoin(float valCoin) {
+        public void AddCoin(float valCoin)
+        {
             _coins += valCoin;
             Debug.Log(string.Format("монет: {0}", _coins));
         }
