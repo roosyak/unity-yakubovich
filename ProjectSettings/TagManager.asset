@@ -50,3 +50,6 @@ TagManager:
   - name: hero
     uniqueID: 491591139
     locked: 0
+  - name: front
+    uniqueID: 3563009881
+    locked: 0
