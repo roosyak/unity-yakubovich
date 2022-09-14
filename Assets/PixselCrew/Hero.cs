@@ -11,6 +11,7 @@ namespace PixelCrew
         private Rigidbody2D _rigidbody;
         private float _coins = 0f;
         private Animator _animator;
+        private SpriteRenderer _sprite;
 
         private static int IsGroundKey = Animator.StringToHash("is-ground");
         private static int VerticalVilocityKey = Animator.StringToHash("vertical-vilcity");
@@ -19,6 +20,7 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _sprite = GetComponent<SpriteRenderer>();
         }
         public void SetDirection(Vector2 direction)
         {
@@ -44,9 +46,22 @@ namespace PixelCrew
             _animator.SetBool(IsGroundKey, isGround);
             _animator.SetFloat(VerticalVilocityKey, _rigidbody.velocity.y);
             _animator.SetBool(IsRuningKey, _direction.x != 0);
+
+            UpdateSpriteDirection();
         }
 
 
+        private void UpdateSpriteDirection()
+        {
+            if (_direction.x > 0)
+            {
+                _sprite.flipX = false;
+            }
+            else if (_direction.x < 0)
+            {
+                _sprite.flipX = true;
+            }
+        }
         /// <summary>
         /// стоит ли герой на поверхности  
         /// </summary>
