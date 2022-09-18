@@ -5,6 +5,7 @@ namespace PixelCrew
     {
         [SerializeField] private float _speed = 1f;
         [SerializeField] private float _jumpSpeed = 1f;
+        [SerializeField] private float _damagejumpSpeed = 1f;
         [SerializeField] private LayerCheck _groundCheck;
 
         private Vector2 _direction;
@@ -18,6 +19,7 @@ namespace PixelCrew
         private static int IsGroundKey = Animator.StringToHash("is-ground");
         private static int VerticalVilocityKey = Animator.StringToHash("vertical-vilcity");
         private static int IsRuningKey = Animator.StringToHash("is-runing");
+        private static int hit = Animator.StringToHash("hit");
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -119,6 +121,11 @@ namespace PixelCrew
         {
             _coins += valCoin;
             Debug.Log(string.Format("монет: {0}", _coins));
+        }
+
+        public void TakeDamage() {
+            _animator.SetTrigger(hit);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damagejumpSpeed);
         }
     }
 

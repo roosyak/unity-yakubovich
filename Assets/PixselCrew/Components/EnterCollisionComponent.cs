@@ -1,0 +1,37 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace PixelCrew.Components
+{
+    public class EnterCollisionComponent : MonoBehaviour
+    {
+
+        /// <summary>
+        /// тег с которым срабатывает событие 
+        /// </summary>
+        [SerializeField] private string _tag;
+
+        /// <summary>
+        /// внешний метод который нужно выполнить
+        /// </summary>
+        [SerializeField] private EnterEvent _action;
+        /// <summary>
+        /// столкновение двух физических объектов 
+        /// </summary>
+        /// <param name="other"></param>
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag(_tag))
+                _action?.Invoke(other.gameObject);
+        }
+
+        // «конструкция» чтобы передать событие с параметром 
+        [Serializable]
+        public class EnterEvent : UnityEvent<GameObject> { 
+
+        }
+    }
+
+
+}
