@@ -12,6 +12,8 @@ namespace PixelCrew
         private float _coins = 0f;
         private Animator _animator;
         private SpriteRenderer _sprite;
+        private bool _isGround;
+        private bool _allDoubleJump;
 
         private static int IsGroundKey = Animator.StringToHash("is-ground");
         private static int VerticalVilocityKey = Animator.StringToHash("vertical-vilcity");
@@ -27,30 +29,67 @@ namespace PixelCrew
             _direction = direction;
         }
 
+        private void Update()
+        {
+            _isGround = IsGrounded();
+        }
+
         private void FixedUpdate()
         {
-            _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
-            var _isJumping = _direction.y > 0;
-            var isGround = IsGrounded();
-            if (_isJumping)
-            {
-                if (isGround && _rigidbody.velocity.y <= 0)
-                {
-                    _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
-                }
-            }
-            else if (_rigidbody.velocity.y > 0)
-            {
-                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
-            }
-            _animator.SetBool(IsGroundKey, isGround);
+            var xVilocity = _direction.x * _speed;
+            var yVilocity = CalculateYVilocity();
+
+            _rigidbody.velocity = new Vector2(xVilocity, yVilocity);
+
+            _animator.SetBool(IsGroundKey, _isGround);
             _animator.SetFloat(VerticalVilocityKey, _rigidbody.velocity.y);
             _animator.SetBool(IsRuningKey, _direction.x != 0);
 
             UpdateSpriteDirection();
         }
 
+        /// <summary>
+        /// пересчёт Y координаты 
+        /// </summary>
+        /// <returns></returns>
+        private float CalculateYVilocity()
+        {
+            var resultY = _rigidbody.velocity.y;
 
+            var isJumpPressing = _direction.y > 0;
+
+            if (_isGround) _allDoubleJump = true;
+            if (isJumpPressing)
+            {
+                resultY = CalculateJumpVelocity(resultY);
+            }
+            else if (_rigidbody.velocity.y > 0)
+            {
+                resultY += 0.5f;
+            }
+
+            return resultY;
+        }
+
+        /// <summary>
+        /// пересчёт скорости по Y
+        /// </summary>
+        /// <returns></returns>
+        private float CalculateJumpVelocity(float Y)
+        {
+            var isFalling = _rigidbody.velocity.y <= 0.001f;
+            if (!isFalling) return Y;
+
+            if (_isGround)
+            {
+                Y += _jumpSpeed;
+            }
+            else if (_allDoubleJump) {
+                Y = _jumpSpeed;
+                _allDoubleJump = false;
+            }
+            return Y;
+        }
         private void UpdateSpriteDirection()
         {
             if (_direction.x > 0)
