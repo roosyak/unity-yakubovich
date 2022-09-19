@@ -8,6 +8,10 @@ namespace PixelCrew
         [SerializeField] private float _damagejumpSpeed = 1f;
         [SerializeField] private LayerCheck _groundCheck;
 
+        [SerializeField] private float _interactionRadius;
+        [SerializeField] private LayerMask _interactionLayer;
+
+        private Collider2D[] _interactionResult = new Collider2D[1];
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
         private float _coins = 0f;
@@ -86,7 +90,8 @@ namespace PixelCrew
             {
                 Y += _jumpSpeed;
             }
-            else if (_allDoubleJump) {
+            else if (_allDoubleJump)
+            {
                 Y = _jumpSpeed;
                 _allDoubleJump = false;
             }
@@ -123,9 +128,21 @@ namespace PixelCrew
             Debug.Log(string.Format("монет: {0}", _coins));
         }
 
-        public void TakeDamage() {
+        public void TakeDamage()
+        {
             _animator.SetTrigger(hit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damagejumpSpeed);
+        }
+
+        public void Interact()
+        {
+            var size = Physics2D.OverlapCircleNonAlloc(transform.position, _interactionRadius, _interactionResult, _interactionLayer);
+            for (int i = 0; i < size; i++)
+            {
+                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
+                if (interactable != null)
+                    interactable.Interact();
+            }
         }
     }
 
