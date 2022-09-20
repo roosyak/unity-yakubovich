@@ -6417,6 +6417,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335218, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
