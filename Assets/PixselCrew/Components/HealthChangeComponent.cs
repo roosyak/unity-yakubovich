@@ -1,12 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine; 
 
 namespace PixelCrew.Components
 {
     /// <summary>
     /// применение урона
     /// </summary>
-    public class DamagComponent : MonoBehaviour
+    public class HealthChangeComponent : MonoBehaviour
     {
         [SerializeField] private int _damag;
         /// <summary>
