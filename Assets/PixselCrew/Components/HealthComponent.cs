@@ -14,7 +14,14 @@ namespace PixelCrew.Components
         /// <param name="damageValue"></param>
         public void ApplyDamage(int damageValue)
         {
-            _health -= damageValue;
+            _health += damageValue; 
+            Debug.Log(string.Format(
+                    damageValue > 0 ?
+                        "Здоровье: {0} → {1}" :
+                        "Урон: {0} → {1}",
+                    damageValue,
+                    _health)); 
+
             _onDamage?.Invoke();
             if (_health <= 0)
                 _onDie?.Invoke();
