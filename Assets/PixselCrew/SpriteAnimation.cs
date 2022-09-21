@@ -55,6 +55,7 @@ namespace PixelCrew
 
         private void OnEnable()
         {
+            _secondsPreFrame = 1f / _frameRate;
             _nexteFrameTime = Time.time + _secondsPreFrame;
         }
 

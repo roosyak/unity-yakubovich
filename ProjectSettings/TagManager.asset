@@ -47,11 +47,11 @@ TagManager:
   - name: lavel
     uniqueID: 1155139337
     locked: 0
-  - name: hero
-    uniqueID: 491591139
-    locked: 0
   - name: props
     uniqueID: 2248124131
+    locked: 0
+  - name: hero
+    uniqueID: 491591139
     locked: 0
   - name: front
     uniqueID: 3563009881
