@@ -11,6 +11,8 @@ namespace PixelCrew
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
+        [SerializeField] private SpawnComponent _foodSteps;
+
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
@@ -143,6 +145,14 @@ namespace PixelCrew
                 if (interactable != null)
                     interactable.Interact();
             }
+        }
+
+        /// <summary>
+        /// выполнить создание анимации «бега»
+        /// </summary>
+        public void SpawnFootDust()
+        {
+            _foodSteps.Spawn();
         }
     }
 
