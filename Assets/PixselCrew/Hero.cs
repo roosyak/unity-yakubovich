@@ -18,7 +18,6 @@ namespace PixelCrew
         private Rigidbody2D _rigidbody;
         private float _coins = 0f;
         private Animator _animator;
-        private SpriteRenderer _sprite;
         private bool _isGround;
         private bool _allDoubleJump;
 
@@ -30,7 +29,6 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();
         }
         public void SetDirection(Vector2 direction)
         {
@@ -101,14 +99,11 @@ namespace PixelCrew
         }
         private void UpdateSpriteDirection()
         {
-            if (_direction.x > 0)
-            {
-                _sprite.flipX = false;
-            }
-            else if (_direction.x < 0)
-            {
-                _sprite.flipX = true;
-            }
+            if (_direction.x > 0) 
+                transform.localScale = Vector3.one;        
+            else if (_direction.x < 0) 
+                // изменяем отображения в другом направлении
+                transform.localScale = new Vector3(-1, 1, 1); 
         }
         /// <summary>
         /// стоит ли герой на поверхности  

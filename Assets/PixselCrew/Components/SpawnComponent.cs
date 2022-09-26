@@ -11,6 +11,8 @@ public class SpawnComponent : MonoBehaviour
     [ContextMenu("Spawn")]
     public void Spawn()
     {
-        Instantiate(_prefab, _target.position, Quaternion.identity);
+        var instante = Instantiate(_prefab, _target.position, Quaternion.identity);
+        // присваеваем значения «мира» (а не относительные)
+        instante.transform.localScale = _target.lossyScale;
     }
 }
