@@ -7,7 +7,7 @@ namespace PixelCrew
         /// <summary>
         /// наминал монеты
         /// </summary>
-        [SerializeField] private float _price = 1f;
+        [SerializeField] private int _price = 1;
         private Hero _hero;
 
         private void Start()

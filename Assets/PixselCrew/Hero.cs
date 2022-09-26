@@ -12,11 +12,12 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private SpawnComponent _foodSteps;
+        [SerializeField] private ParticleSystem _hitParticle;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
-        private float _coins = 0f;
+        private int _coins = 0;
         private Animator _animator;
         private bool _isGround;
         private bool _allDoubleJump;
@@ -99,11 +100,11 @@ namespace PixelCrew
         }
         private void UpdateSpriteDirection()
         {
-            if (_direction.x > 0) 
-                transform.localScale = Vector3.one;        
-            else if (_direction.x < 0) 
+            if (_direction.x > 0)
+                transform.localScale = Vector3.one;
+            else if (_direction.x < 0)
                 // изменяем отображения в другом направлении
-                transform.localScale = new Vector3(-1, 1, 1); 
+                transform.localScale = new Vector3(-1, 1, 1);
         }
         /// <summary>
         /// стоит ли герой на поверхности  
@@ -119,7 +120,7 @@ namespace PixelCrew
             Debug.Log("SaySomething");
         }
 
-        public void AddCoin(float valCoin)
+        public void AddCoin(int valCoin)
         {
             _coins += valCoin;
             Debug.Log(string.Format("монет: {0}", _coins));
@@ -129,6 +130,25 @@ namespace PixelCrew
         {
             _animator.SetTrigger(hit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damagejumpSpeed);
+
+            if (_coins > 0)
+                SpawnCoins();
+        }
+
+        /// <summary>
+        /// выкинуть монетки у героя 
+        /// </summary>
+        private void SpawnCoins()
+        {
+            var numCoinsToDispase = Mathf.Min(_coins, 5);
+            _coins -= numCoinsToDispase;
+
+            var burst = _hitParticle.emission.GetBurst(0);
+            burst.count = numCoinsToDispase;
+            _hitParticle.emission.SetBurst(0, burst);
+
+            _hitParticle.gameObject.SetActive(true);
+            _hitParticle.Play();
         }
 
         public void Interact()
