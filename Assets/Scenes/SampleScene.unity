@@ -1751,6 +1751,7 @@ Transform:
   - {fileID: 182566109}
   - {fileID: 1695354911}
   - {fileID: 1926348134}
+  - {fileID: 1089575673}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1789,6 +1790,7 @@ MonoBehaviour:
     m_Bits: 512
   _foodSteps: {fileID: 1695354912}
   _jamp: {fileID: 1926348135}
+  _jampFall: {fileID: 1089575674}
   _hitParticle: {fileID: 389454881}
 --- !u!114 &326928939
 MonoBehaviour:
@@ -13332,6 +13334,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1089575672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089575673}
+  - component: {fileID: 1089575674}
+  m_Layer: 0
+  m_Name: JumpFallPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089575673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089575672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.279, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 326928936}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1089575674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089575672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc9f59a8c885fb4484e482066725b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1089575673}
+  _prefab: {fileID: 8235637641102850018, guid: 1e08e7cddcde371419cf3b629c3d5c7e, type: 3}
 --- !u!114 &1209134548 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5641877310955455985, guid: 63b33cc306a62a64b8ee8fccd5fa5c4c,

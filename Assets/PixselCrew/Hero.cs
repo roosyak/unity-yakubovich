@@ -13,6 +13,7 @@ namespace PixelCrew
 
         [SerializeField] private SpawnComponent _foodSteps;
         [SerializeField] private SpawnComponent _jamp;
+        [SerializeField] private SpawnComponent _jampFall;
         [SerializeField] private ParticleSystem _hitParticle;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -22,6 +23,7 @@ namespace PixelCrew
         private Animator _animator;
         private bool _isGround;
         private bool _allDoubleJump;
+        private float _mimVelocityY = 0;
 
         private static int IsGroundKey = Animator.StringToHash("is-ground");
         private static int VerticalVilocityKey = Animator.StringToHash("vertical-vilcity");
@@ -47,7 +49,14 @@ namespace PixelCrew
             var xVilocity = _direction.x * _speed;
             var yVilocity = CalculateYVilocity();
 
+            if (_rigidbody.velocity.y == 0 && _mimVelocityY < (_jumpSpeed * -1.1f))
+            {
+                _mimVelocityY = 0;
+                SpawnJampFall();
+            }
+
             _rigidbody.velocity = new Vector2(xVilocity, yVilocity);
+            _mimVelocityY = Mathf.Min(_mimVelocityY, _rigidbody.velocity.y);
 
             _animator.SetBool(IsGroundKey, _isGround);
             _animator.SetFloat(VerticalVilocityKey, _rigidbody.velocity.y);
@@ -69,13 +78,9 @@ namespace PixelCrew
             if (_isGround)
                 _allDoubleJump = true;
             if (isJumpPressing)
-            {
                 resultY = CalculateJumpVelocity(resultY);
-            }
             else if (_rigidbody.velocity.y > 0)
-            {
                 resultY += 0.5f;
-            }
 
             return resultY;
         }
@@ -87,7 +92,10 @@ namespace PixelCrew
         private float CalculateJumpVelocity(float Y)
         {
             var isFalling = _rigidbody.velocity.y <= 0.001f;
-            if (!isFalling) return Y;
+            if (!isFalling)
+            {
+                return Y;
+            }
 
             if (_isGround)
             {
@@ -180,6 +188,13 @@ namespace PixelCrew
         public void SpawnJamp()
         {
             _jamp.Spawn();
+        }
+        /// <summary>
+        /// выполнить создание анимации «приземления»
+        /// </summary>
+        public void SpawnJampFall()
+        {
+            _jampFall.Spawn();
         }
     }
 
