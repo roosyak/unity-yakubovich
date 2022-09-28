@@ -12,6 +12,7 @@ namespace PixelCrew
         [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private SpawnComponent _foodSteps;
+        [SerializeField] private SpawnComponent _jamp;
         [SerializeField] private ParticleSystem _hitParticle;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -65,7 +66,8 @@ namespace PixelCrew
 
             var isJumpPressing = _direction.y > 0;
 
-            if (_isGround) _allDoubleJump = true;
+            if (_isGround)
+                _allDoubleJump = true;
             if (isJumpPressing)
             {
                 resultY = CalculateJumpVelocity(resultY);
@@ -90,11 +92,13 @@ namespace PixelCrew
             if (_isGround)
             {
                 Y += _jumpSpeed;
+                SpawnJamp();
             }
             else if (_allDoubleJump)
             {
                 Y = _jumpSpeed;
                 _allDoubleJump = false;
+                SpawnJamp();
             }
             return Y;
         }
@@ -168,6 +172,14 @@ namespace PixelCrew
         public void SpawnFootDust()
         {
             _foodSteps.Spawn();
+        }
+
+        /// <summary>
+        /// выполнить создание анимации «прыжка»
+        /// </summary>
+        public void SpawnJamp()
+        {
+            _jamp.Spawn();
         }
     }
 
