@@ -8,6 +8,7 @@ namespace PixelCrew.Components
 
         public void Teleport(GameObject target)
         {
+            Debug.Log("Teleport...");
             target.transform.position = _destTransform.position;
         }
     }

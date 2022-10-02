@@ -21,18 +21,24 @@ namespace PixelCrew.Components
         {
             _health += damageValue;
 
-            Debug.Log(string.Format(
+            var log = string.Format(
                     damageValue > 0 ?
                         "Здоровье: {0} → {1}" :
                         "Урон: {0} → {1}",
                     damageValue,
-                    _health));
+                    _health);
 
             if (damageValue < 0)
+            {
+                Debug.Log("_onDamage: " + log);
                 _onDamage?.Invoke();
+            }
 
             if (_health <= 0)
+            {
+                Debug.Log("_onDie");
                 _onDie?.Invoke();
+            }
         }
     }
 }
