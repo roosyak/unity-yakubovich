@@ -9,11 +9,6 @@ namespace PixelCrew.Components
     public class PlatformaComponent : MonoBehaviour
     {
         /// <summary>
-        /// объект которые будем двигать
-        /// </summary>
-        [SerializeField] private GameObject _platforma;
-
-        /// <summary>
         /// скорость движения
         /// </summary>
         [SerializeField] private float _speed = 0.01f;
@@ -30,7 +25,7 @@ namespace PixelCrew.Components
         /// <summary>
         /// текущая скорость и направление
         /// </summary>
-        private float _currentSpeed;
+        private float _currentSpeed; 
 
         private void Awake()
         {
@@ -41,17 +36,30 @@ namespace PixelCrew.Components
         /// </summary>
         public void ChangeDirectionMovement()
         {
-            Debug.Log("ChangeDirectionMovement...");
+            // Debug.Log("ChangeDirectionMovement...");
             _back = !_back;
             _currentSpeed = _back ? (_speed * -1) : _speed;
         }
 
+        public void MoveObject(GameObject obj)
+        {
+            if (!_isVertical)
+            {
+                var rb = obj.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.position = new Vector2(rb.position.x + _currentSpeed, rb.position.y);
+                    // Debug.Log(string.Format("MoveObject {0} {1}", rb.position.x, rb.position.y));
+                }
+            }
+        } 
         private void FixedUpdate()
         {
             if (_isVertical)
                 transform.position = new Vector3(transform.position.x, transform.position.y + _currentSpeed, transform.position.z);
             else
                 transform.position = new Vector3(transform.position.x + _currentSpeed, transform.position.y, transform.position.z);
+ 
 
         }
     }
