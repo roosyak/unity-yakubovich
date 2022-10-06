@@ -4700,6 +4700,7 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damagejumpSpeed: 7
+  _slamDownVilocity: 13
   _groundCheck: {fileID: 182566107}
   _interactionRadius: 1
   _interactionLayer:

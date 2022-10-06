@@ -6,14 +6,16 @@ namespace PixelCrew
         [SerializeField] private float _speed = 1f;
         [SerializeField] private float _jumpSpeed = 1f;
         [SerializeField] private float _damagejumpSpeed = 1f;
+        [SerializeField] private float _slamDownVilocity; 
         [SerializeField] private LayerCheck _groundCheck;
 
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
-        [SerializeField] private SpawnComponent _foodSteps;
-        [SerializeField] private SpawnComponent _jamp;
-        [SerializeField] private SpawnComponent _jampFall;
+        [Space] [Header("Particles")]
+        [SerializeField] private SpawnComponent _foodSteps; // анимация бега 
+        [SerializeField] private SpawnComponent _jamp;      // анимация начала прыжка 
+        [SerializeField] private SpawnComponent _jampFall;  // анимация падения 
         [SerializeField] private ParticleSystem _hitParticle;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -22,8 +24,7 @@ namespace PixelCrew
         private int _coins = 0;
         private Animator _animator;
         private bool _isGround;
-        private bool _allDoubleJump;
-        private float _mimVelocityY = 0;
+        private bool _allDoubleJump; 
 
         private static int IsGroundKey = Animator.StringToHash("is-ground");
         private static int VerticalVilocityKey = Animator.StringToHash("vertical-vilcity");
@@ -47,16 +48,9 @@ namespace PixelCrew
         private void FixedUpdate()
         {
             var xVilocity = _direction.x * _speed;
-            var yVilocity = CalculateYVilocity();
+            var yVilocity = CalculateYVilocity(); 
 
-            if (_rigidbody.velocity.y == 0 && _mimVelocityY < (_jumpSpeed * -1.1f))
-            {
-                _mimVelocityY = 0;
-                SpawnJampFall();
-            }
-
-            _rigidbody.velocity = new Vector2(xVilocity, yVilocity);
-            _mimVelocityY = Mathf.Min(_mimVelocityY, _rigidbody.velocity.y);
+            _rigidbody.velocity = new Vector2(xVilocity, yVilocity); 
 
             _animator.SetBool(IsGroundKey, _isGround);
             _animator.SetFloat(VerticalVilocityKey, _rigidbody.velocity.y);
@@ -100,13 +94,13 @@ namespace PixelCrew
             if (_isGround)
             {
                 Y += _jumpSpeed;
-                SpawnJamp();
+                _jamp.Spawn();
             }
             else if (_allDoubleJump)
             {
                 Y = _jumpSpeed;
                 _allDoubleJump = false;
-                SpawnJamp();
+                _jamp.Spawn();
             }
             return Y;
         }
@@ -182,19 +176,16 @@ namespace PixelCrew
             _foodSteps.Spawn();
         }
 
-        /// <summary>
-        /// выполнить создание анимации «прыжка»
-        /// </summary>
-        public void SpawnJamp()
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            _jamp.Spawn();
-        }
-        /// <summary>
-        /// выполнить создание анимации «приземления»
-        /// </summary>
-        public void SpawnJampFall()
-        {
-            _jampFall.Spawn();
+            // проверяем пересечением со слоем 
+            if (other.gameObject.IsInLayer(_groundCheck._groundLayer)) {
+                var contact = other.contacts[0];
+                // проверяем силу соприкосновения 
+                if (contact.relativeVelocity.y >= _slamDownVilocity) {
+                    _jampFall.Spawn();
+                }
+            }
         }
     }
 

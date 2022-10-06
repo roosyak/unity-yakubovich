@@ -36,12 +36,13 @@ namespace PixelCrew.Components
                 _actionStay?.Invoke(other.gameObject);
         }
 
-        // «конструкция» чтобы передать событие с параметром 
-        [Serializable]
-        public class EnterEvent : UnityEvent<GameObject> { 
 
-        }
     }
 
+    // «конструкция» чтобы передать событие с параметром 
+    [Serializable]
+    public class EnterEvent : UnityEvent<GameObject>
+    {
 
+    }
 }

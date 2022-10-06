@@ -4,7 +4,7 @@ namespace PixelCrew
 {
     public class LayerCheck : MonoBehaviour
     {
-        [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] public LayerMask _groundLayer;
         private Collider2D _collider;
 
         /// <summary>
