@@ -50,7 +50,7 @@ namespace PixelCrew
         {
             _nexteFrameTime = Time.time + _secondsPreFrame;
             _currentFrame = 0;
-            _isPlaing = true;
+            enabled = _isPlaing = true;
         }
 
         private void OnEnable()
@@ -70,9 +70,9 @@ namespace PixelCrew
                     _currentFrame = 0;
                 else
                 {
+                    enabled = _isPlaing = clip.AllowNextClip;
                     clip.OnComplate?.Invoke();
                     _onComplate?.Invoke(clip.Name);
-                    enabled = _isPlaing = clip.AllowNextClip;
                     if (clip.AllowNextClip)
                     {
                         _currentFrame = 0;
