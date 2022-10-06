@@ -6,6 +6,7 @@ namespace PixelCrew.Components
     {
         public void Reload()
         {
+            Debug.Log("SceneManager.LoadScene...");
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }

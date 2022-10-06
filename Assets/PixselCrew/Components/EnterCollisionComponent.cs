@@ -13,9 +13,13 @@ namespace PixelCrew.Components
         [SerializeField] private string _tag;
 
         /// <summary>
-        /// внешний метод который нужно выполнить
+        /// внешний метод который нужно выполнить по началу
         /// </summary>
         [SerializeField] private EnterEvent _action;
+        /// <summary>
+        /// внешний метод который нужно выполнить по завершению
+        /// </summary>
+        [SerializeField] private EnterEvent _actionStay;
         /// <summary>
         /// столкновение двух физических объектов 
         /// </summary>
@@ -24,6 +28,12 @@ namespace PixelCrew.Components
         {
             if (other.gameObject.CompareTag(_tag))
                 _action?.Invoke(other.gameObject);
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag(_tag))
+                _actionStay?.Invoke(other.gameObject);
         }
 
         // «конструкция» чтобы передать событие с параметром 
