@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-namespace PixelCrew.Components
-{
+// namespace PixelCrew.Components
+//{
     /// <summary>
     /// текущее  здоровье 
     /// </summary>
@@ -41,4 +41,4 @@ namespace PixelCrew.Components
             }
         }
     }
-}
+//}

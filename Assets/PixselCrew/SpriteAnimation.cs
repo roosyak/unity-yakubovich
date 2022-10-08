@@ -70,7 +70,7 @@ namespace PixelCrew
                     _currentFrame = 0;
                 else
                 {
-                    enabled = _isPlaing = clip.AllowNextClip;
+                    enabled = _isPlaing = clip.AllowNextClip; 
                     clip.OnComplate?.Invoke();
                     _onComplate?.Invoke(clip.Name);
                     if (clip.AllowNextClip)
