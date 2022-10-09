@@ -24,6 +24,7 @@ namespace PixelCrew
         [SerializeField] private SpawnComponent _foodSteps; // анимация бега 
         [SerializeField] private SpawnComponent _jamp;      // анимация начала прыжка 
         [SerializeField] private SpawnComponent _jampFall;  // анимация падения 
+        [SerializeField] private SpawnComponent _attack;  // анимация атаки меча 
         [SerializeField] private ParticleSystem _hitParticle;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -209,6 +210,7 @@ namespace PixelCrew
             if (!_isArmed)
                 return; 
             _animator.SetTrigger(AttackKey);
+            _attack.Spawn();
         }
 
         public void onAttack()
