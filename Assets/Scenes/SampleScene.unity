@@ -4661,7 +4661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326928934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.326, y: -1.333, z: 0}
+  m_LocalPosition: {x: -0.47, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 389454879}
@@ -15477,7 +15477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.326, y: -1.333, z: -10}
+  m_LocalPosition: {x: -0.47018692, y: -1.4410028, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16993,6 +16993,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2103016608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &683034649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4999931129052630103, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4999931129740108289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &683034658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683034649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0551c3af4c466634bac7909c72b235ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 10
+  _percentSilver: 70
+  _percentGold: 30
+  _coinSilver: {fileID: 4186646850829335221, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
+    type: 3}
+  _coinGold: {fileID: 4186646850829335221, guid: 6bc4c23de5021324086efd23cd2f65a7,
+    type: 3}
 --- !u!1001 &694813308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17236,7 +17261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730427956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.784, y: -0.183, z: 0}
+  m_LocalPosition: {x: 0.9, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 326928936}
@@ -19263,7 +19288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226712306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.326, y: -1.333, z: -10}
+  m_LocalPosition: {x: -0.47, y: -1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1287768726}
@@ -26154,7 +26179,37 @@ PrefabInstance:
     - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}
       propertyPath: _health
-      value: 10
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 683034658}
+    - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CreateRandomCoins
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999931129052630102, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
+        type: 3}
+      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4999931129052630103, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}
@@ -26169,7 +26224,7 @@ PrefabInstance:
     - target: {fileID: 4999931129052630106, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -1.587
       objectReference: {fileID: 0}
     - target: {fileID: 4999931129052630106, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}

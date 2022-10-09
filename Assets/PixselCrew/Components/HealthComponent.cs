@@ -36,7 +36,7 @@ using UnityEngine.Events;
 
             if (_health <= 0)
             {
-                Debug.Log("_onDie");
+                // Debug.Log("_onDie");
                 _onDie?.Invoke();
             }
         }
