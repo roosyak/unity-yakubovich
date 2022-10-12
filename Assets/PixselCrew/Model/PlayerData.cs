@@ -1,5 +1,5 @@
 ﻿using System;
-namespace PixelCrew.Model
+namespace PixelCrew
 {
     [Serializable]
     public class PlayerData

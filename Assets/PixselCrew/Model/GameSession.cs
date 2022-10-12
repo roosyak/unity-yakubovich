@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace PixelCrew.Model
+namespace PixelCrew
 {
     public class GameSession : MonoBehaviour
     {
@@ -9,6 +9,7 @@ namespace PixelCrew.Model
         {
             if (IsSessionExit())
             {
+                // удаляем из текущей сцены 
                 DestroyImmediate(gameObject);
             }
             else {

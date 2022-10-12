@@ -7,6 +7,10 @@ namespace PixelCrew.Components
         public void Reload()
         {
             Debug.Log("SceneManager.LoadScene...");
+            var session = FindObjectOfType<GameSession>();
+            if(session != null)
+                //DestroyImmediate(session);
+                Destroy(session);
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }

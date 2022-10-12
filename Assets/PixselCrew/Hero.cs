@@ -1,5 +1,5 @@
 ﻿using UnityEditor.Animations;
-using UnityEngine; 
+using UnityEngine;
 namespace PixelCrew
 {
     public class Hero : MonoBehaviour
@@ -32,8 +32,7 @@ namespace PixelCrew
 
         private Vector2 _direction;
         private Rigidbody2D _rigidbody;
-        private int _coins = 0;
-        private bool _isArmed;
+        private GameSession _session;
 
         private Animator _animator;
         private bool _isGround;
@@ -49,6 +48,19 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+        }
+
+        private void Start()
+        {
+            _session = FindObjectOfType<GameSession>();
+            var heals = GetComponent<HealthComponent>();
+            heals.SetHealth(_session.Data.Hp);
+            UpdateHeroWeapon();
+        }
+
+        public void OnHealthChanged(int currentHealth)
+        {
+            _session.Data.Hp = currentHealth;
         }
         public void SetDirection(Vector2 direction)
         {
@@ -143,8 +155,8 @@ namespace PixelCrew
 
         public void AddCoin(int valCoin)
         {
-            _coins += valCoin;
-            Debug.Log(string.Format("монет: {0}", _coins));
+            _session.Data.Coins += valCoin;
+            Debug.Log(string.Format("монет: {0}", _session.Data.Coins));
         }
 
         public void TakeDamage()
@@ -152,7 +164,7 @@ namespace PixelCrew
             _animator.SetTrigger(hit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damagejumpSpeed);
 
-            if (_coins > 0)
+            if (_session.Data.Coins > 0)
                 SpawnCoins();
         }
 
@@ -161,8 +173,8 @@ namespace PixelCrew
         /// </summary>
         private void SpawnCoins()
         {
-            var numCoinsToDispase = Mathf.Min(_coins, 5);
-            _coins -= numCoinsToDispase;
+            var numCoinsToDispase = Mathf.Min(_session.Data.Coins, 5);
+            _session.Data.Coins -= numCoinsToDispase;
 
             var burst = _hitParticle.emission.GetBurst(0);
             burst.count = numCoinsToDispase;
@@ -207,13 +219,13 @@ namespace PixelCrew
 
         public void Attack()
         {
-            if (!_isArmed)
-                return; 
+            if (!_session.Data.IsArmed)
+                return;
             _animator.SetTrigger(AttackKey);
             _attack.Spawn();
         }
 
-        public void onAttack()
+        public void onDoAttack()
         {
             var gos = _attackRange.GetObjectsInRange();
             foreach (var go in gos)
@@ -228,8 +240,14 @@ namespace PixelCrew
 
         public void ArmHero()
         {
-            _isArmed = true;
-            _animator.runtimeAnimatorController = _armed;
+            _session.Data.IsArmed = true;
+            UpdateHeroWeapon();
+        }
+
+        private void UpdateHeroWeapon()
+        {
+            _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+
         }
     }
 
