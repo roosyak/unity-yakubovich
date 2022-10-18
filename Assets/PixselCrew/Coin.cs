@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PixelCrew
+namespace PixselCrew
 {
     public class Coin : MonoBehaviour
     {
@@ -8,11 +8,11 @@ namespace PixelCrew
         /// наминал монеты
         /// </summary>
         [SerializeField] private int _price = 1;
-        private Hero _hero;
+        private PixselCrew.Creatures.Hero _hero;
 
         private void Start()
         {
-            _hero = FindObjectOfType<Hero>();
+            _hero = FindObjectOfType<PixselCrew.Creatures.Hero>();
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-namespace PixelCrew.Components
+namespace PixselCrew.Components
 {
     public class ReloadLavelComponent : MonoBehaviour
     {

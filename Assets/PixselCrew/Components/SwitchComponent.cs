@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace PixelCrew.Components
+namespace PixselCrew.Components
 {
     public class SwitchComponent : MonoBehaviour
     {

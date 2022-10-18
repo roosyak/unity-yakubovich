@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew
+namespace PixselCrew
 {
     public class InteractableComponent : MonoBehaviour
     {

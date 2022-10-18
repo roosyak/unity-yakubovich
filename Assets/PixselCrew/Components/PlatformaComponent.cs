@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixselCrew.Components
 {
     /// <summary>
     /// движущийся элемент уровня

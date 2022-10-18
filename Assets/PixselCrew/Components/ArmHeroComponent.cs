@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixselCrew.Components
 {
     public class ArmHeroComponent : MonoBehaviour
     {
         public void ArmHero(GameObject go)
         {
-            var hero = go.GetComponent<Hero>();
+            var hero = go.GetComponent<PixselCrew.Creatures.Hero>();
             if (hero != null)
             {
                 hero.ArmHero();

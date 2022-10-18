@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-namespace PixelCrew
+namespace PixselCrew
 {
     public class HandlesUtils  
     {

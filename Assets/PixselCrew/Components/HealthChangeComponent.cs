@@ -1,6 +1,6 @@
 ﻿using UnityEngine; 
 
-namespace PixelCrew.Components
+namespace PixselCrew.Components
 {
     /// <summary>
     /// применение урона

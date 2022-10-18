@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixselCrew.Components
 {
     public class EnterTriggerComponent : MonoBehaviour
     {

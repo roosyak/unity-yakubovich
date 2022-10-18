@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace PixelCrew
+namespace PixselCrew
 {
     public class GameSession : MonoBehaviour
     {

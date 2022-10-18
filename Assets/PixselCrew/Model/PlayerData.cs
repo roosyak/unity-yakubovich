@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace PixelCrew
+namespace PixselCrew
 {
     [Serializable]
     public class PlayerData

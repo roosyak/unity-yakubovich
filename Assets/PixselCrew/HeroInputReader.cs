@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PixelCrew
+namespace PixselCrew
 {
     public class HeroInputReader : MonoBehaviour
     {
-        [SerializeField] private Hero _hero;
+        [SerializeField] private PixselCrew.Creatures.Hero _hero;
 
         public void OnHorizontalMovement(InputAction.CallbackContext context)
         {
@@ -15,8 +15,9 @@ namespace PixelCrew
 
         public void OnSaySomethig(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Performed)
+           /* if (context.phase == InputActionPhase.Performed)
                 _hero.SaySomething();
+           */
         }
 
         public void OnInteract(InputAction.CallbackContext context)
