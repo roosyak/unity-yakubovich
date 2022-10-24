@@ -26,7 +26,8 @@ namespace PixselCrew
 
         public void LoadLastSave()
         {
-            _data = _save.clone();
+            if (_save != null)
+                _data = _save.clone();
         }
 
         public void Save()

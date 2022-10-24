@@ -6,6 +6,7 @@ namespace PixselCrew.Creatures
     public class Creature : MonoBehaviour
     {
         [Header("Params")]
+        [SerializeField] private bool _invertScale;
         [SerializeField] private float _speed = 1f;
         [SerializeField] protected float _jumpSpeed = 1f;
         [SerializeField] private float _damageVelocity = 1f;
@@ -100,11 +101,12 @@ namespace PixselCrew.Creatures
 
         private void UpdateSpriteDirection()
         {
+            var multiplay = _invertScale ? -1 : 1;
             if (_direction.x > 0)
-                transform.localScale = Vector3.one;
+                transform.localScale = new Vector3(multiplay, 1, 1);
             else if (_direction.x < 0)
                 // изменяем отображения в другом направлении
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-1 * multiplay, 1, 1);
         }
 
         public virtual void TakeDamage()
@@ -116,7 +118,7 @@ namespace PixselCrew.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
-            _particles.Spawn("Attack");
+            // _particles.Spawn("Attack");
             //_attack.Spawn();
         }
         public void onDoAttack()
