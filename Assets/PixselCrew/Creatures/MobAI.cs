@@ -28,7 +28,7 @@ namespace PixselCrew.Creatures
         private void Awake()
         {
             _particles = GetComponent<PixselCrew.Components.SpawnListComponent>();
-            _creature = GetComponent<Creature>(); 
+            _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
             _patrol = GetComponent<Patrol>();
         }
@@ -102,14 +102,11 @@ namespace PixselCrew.Creatures
             if (_isDead)
                 return;
             Debug.Log("AI die");
-             _isDead = true;
+            _isDead = true;
             _animator.SetBool(isDeadKey, true);
             if (_current != null)
                 StopCoroutine(_current);
 
-            //смещение положения, чтоб моб лежал «красиво»
-            var cc = GetComponent<CapsuleCollider2D>();
-            cc.offset =  new Vector2(cc.offset.x, 0.11f);
         }
     }
 }
