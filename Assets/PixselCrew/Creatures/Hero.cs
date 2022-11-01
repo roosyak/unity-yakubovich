@@ -17,6 +17,8 @@ namespace PixselCrew.Creatures
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticle;
 
+        private static int ThrowKey = Animator.StringToHash("throw");
+
         // private Collider2D[] _interactionResult = new Collider2D[1];
 
         private GameSession _session;
@@ -34,6 +36,16 @@ namespace PixselCrew.Creatures
             var heals = GetComponent<HealthComponent>();
             heals.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
+        }
+
+        public void Throw()
+        {
+            Animator.SetTrigger(ThrowKey);
+        }
+
+        public void OnDoThrow()
+        {
+            _particles.Spawn("Throw");
         }
 
         public void OnHealthChanged(int currentHealth)

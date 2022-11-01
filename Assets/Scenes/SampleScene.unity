@@ -15316,11 +15316,6 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2039447605}
-    - target: {fileID: 7411152342109114261, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2998e7c16e977834193ec0d129e5d426, type: 2}
     - target: {fileID: 7411152342109114269, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
         type: 3}
       propertyPath: m_Name

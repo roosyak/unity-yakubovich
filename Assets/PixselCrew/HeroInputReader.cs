@@ -15,9 +15,9 @@ namespace PixselCrew
 
         public void OnSaySomethig(InputAction.CallbackContext context)
         {
-           /* if (context.phase == InputActionPhase.Performed)
-                _hero.SaySomething();
-           */
+            /* if (context.phase == InputActionPhase.Performed)
+                 _hero.SaySomething();
+            */
         }
 
         public void OnInteract(InputAction.CallbackContext context)
@@ -30,8 +30,14 @@ namespace PixselCrew
         public void OnAttack(InputAction.CallbackContext context)
         {
 
-            if (context.canceled)
+            if (context.performed)
                 _hero.Attack();
+        }
+
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.Throw();
         }
 
     }
