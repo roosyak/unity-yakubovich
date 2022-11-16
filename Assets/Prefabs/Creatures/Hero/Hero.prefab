@@ -4863,7 +4863,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1155139337
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -4973,7 +4973,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 491591139
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dcba6abced383484b8dee17b085354a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5022,6 +5022,8 @@ MonoBehaviour:
   _interactionCheck: {fileID: 1766210545}
   _slamDownVilocity: 13
   _interactionRadius: 1
+  _throwCoolDown:
+    _value: 1
   _armed: {fileID: 9100000, guid: d3de3205876bd2d4f9f182252fb5ba96, type: 2}
   _disarmed: {fileID: 9100000, guid: 2998e7c16e977834193ec0d129e5d426, type: 2}
   _hitParticle: {fileID: 7411152342046595482}
@@ -5449,6 +5451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343040931726}
   _prefab: {fileID: 8235637641102850018, guid: cc5705569ccdc1f42aebd0cd029262c4, type: 3}
+  _invertXScale: 0
 --- !u!1 &7411152343392771907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,6 +5497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343392771906}
   _prefab: {fileID: 8235637641102850018, guid: 1e08e7cddcde371419cf3b629c3d5c7e, type: 3}
+  _invertXScale: 0
 --- !u!1 &7411152343692671198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343692671197}
   _prefab: {fileID: 8235637641102850018, guid: b3bce3168fd0ac944b000cec9e4172d3, type: 3}
+  _invertXScale: 0
 --- !u!1 &7411152343888450981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,6 +5589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343888450980}
   _prefab: {fileID: 8235637641102850018, guid: d70a0a1f344c02d4d848b7847550e70b, type: 3}
+  _invertXScale: 0
 --- !u!1 &8948867180171076088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5629,3 +5635,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1956630745155722041}
   _prefab: {fileID: 8235637641102850018, guid: 068d000823ace9646a89cbecbe7d079a, type: 3}
+  _invertXScale: 0

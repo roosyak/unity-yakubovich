@@ -5,11 +5,12 @@ namespace PixselCrew.Creatures
     public class Hero : Creature
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-       //  [SerializeField] private LayerMask _interactionLayer;
+        //  [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private float _slamDownVilocity;
         [SerializeField] private float _interactionRadius;
 
+        [SerializeField] private PixselCrew.Utils.Cooldown _throwCoolDown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
 
@@ -40,7 +41,11 @@ namespace PixselCrew.Creatures
 
         public void Throw()
         {
-            Animator.SetTrigger(ThrowKey);
+            if (_throwCoolDown.IsReady)
+            {
+                Animator.SetTrigger(ThrowKey);
+                _throwCoolDown.Reset();
+            }
         }
 
         public void OnDoThrow()
@@ -128,13 +133,13 @@ namespace PixselCrew.Creatures
         public void Interact()
         {
             _interactionCheck.Check();
-           /* var size = Physics2D.OverlapCircleNonAlloc(transform.position, _interactionRadius, _interactionResult, _interactionLayer);
-            for (int i = 0; i < size; i++)
-            {
-                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
-                if (interactable != null)
-                    interactable.Interact();
-            }*/
+            /* var size = Physics2D.OverlapCircleNonAlloc(transform.position, _interactionRadius, _interactionResult, _interactionLayer);
+             for (int i = 0; i < size; i++)
+             {
+                 var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
+                 if (interactable != null)
+                     interactable.Interact();
+             }*/
         }
 
         /// <summary>
