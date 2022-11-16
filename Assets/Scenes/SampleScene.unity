@@ -685,6 +685,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -7184,6 +7189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -7475,6 +7485,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -7966,6 +7981,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -8035,6 +8055,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -8642,6 +8667,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -10384,6 +10414,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -10755,6 +10790,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -11699,6 +11739,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -12457,6 +12502,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -12612,6 +12662,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -13579,6 +13634,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -14008,6 +14068,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335218, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_Enabled
@@ -14094,6 +14159,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -14243,6 +14313,11 @@ PrefabInstance:
       propertyPath: _hero
       value: 
       objectReference: {fileID: 326928938}
+    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -14856,11 +14931,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627710174}
     m_Modifications:
-    - target: {fileID: 4186646850829335216, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
-        type: 3}
-      propertyPath: _hero
-      value: 
-      objectReference: {fileID: 326928938}
     - target: {fileID: 4186646850829335220, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
         type: 3}
       propertyPath: m_RootOrder
