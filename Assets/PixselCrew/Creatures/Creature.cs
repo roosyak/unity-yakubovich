@@ -59,7 +59,7 @@ namespace PixselCrew.Creatures
             Animator.SetFloat(VerticalVilocityKey, Rigidbody.velocity.y);
             Animator.SetBool(IsRuningKey, _direction.x != 0);
 
-            UpdateSpriteDirection();
+            UpdateSpriteDirection(_direction);
         }
 
         /// <summary>
@@ -99,12 +99,12 @@ namespace PixselCrew.Creatures
             return Y;
         }
 
-        private void UpdateSpriteDirection()
+        public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplay = _invertScale ? -1 : 1;
-            if (_direction.x > 0)
+            if (direction.x > 0)
                 transform.localScale = new Vector3(multiplay, 1, 1);
-            else if (_direction.x < 0)
+            else if (direction.x < 0)
                 // изменяем отображения в другом направлении
                 transform.localScale = new Vector3(-1 * multiplay, 1, 1);
         }

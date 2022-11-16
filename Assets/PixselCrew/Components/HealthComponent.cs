@@ -19,6 +19,8 @@ public class HealthComponent : MonoBehaviour
     /// <param name="damageValue"> значение здороья/урона</param>
     public void ApplyDamage(int damageValue)
     {
+        if (_health <= 0) return;
+
         _health += damageValue;
         _onChange?.Invoke(_health);
 

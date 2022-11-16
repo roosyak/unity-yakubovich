@@ -48,7 +48,7 @@ namespace PixselCrew
         }
         private void StartAnimation()
         {
-            _nexteFrameTime = Time.time + _secondsPreFrame;
+            _nexteFrameTime = Time.time;
             _currentFrame = 0;
             enabled = _isPlaing = true;
         }
@@ -56,7 +56,7 @@ namespace PixselCrew
         private void OnEnable()
         {
             _secondsPreFrame = 1f / _frameRate;
-            _nexteFrameTime = Time.time + _secondsPreFrame;
+            _nexteFrameTime = Time.time;
         }
 
         private void Update()
@@ -70,7 +70,7 @@ namespace PixselCrew
                     _currentFrame = 0;
                 else
                 {
-                    enabled = _isPlaing = clip.AllowNextClip; 
+                    enabled = _isPlaing = clip.AllowNextClip;
                     clip.OnComplate?.Invoke();
                     _onComplate?.Invoke(clip.Name);
                     if (clip.AllowNextClip)

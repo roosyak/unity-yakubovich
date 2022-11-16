@@ -48,9 +48,17 @@ namespace PixselCrew.Creatures
 
         private IEnumerator ArgoToHero()
         {
+            LookAtHero();
             _particles.Spawn("Excamination");
             yield return new WaitForSeconds(_alarmDelay);
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            _creature.SetDirection(Vector2.zero);
+            var direction = GetDirectionTotarget();
+            _creature.UpdateSpriteDirection(direction);
         }
 
         private IEnumerator GoToHero()
@@ -66,8 +74,11 @@ namespace PixselCrew.Creatures
                 yield return null;
             }
 
+            _creature.SetDirection(Vector2.zero);
             _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missCoolDown);
+
+            StartState(_patrol.DoPatrol());
 
         }
 
@@ -83,11 +94,16 @@ namespace PixselCrew.Creatures
 
         private void SetDirectionToTarget()
         {
-            var direction = _target.transform.position - transform.position;
-            direction.y = 0f;
-            _creature.SetDirection(direction.normalized);
+            var direction = GetDirectionTotarget();
+            _creature.SetDirection(direction);
         }
 
+        private Vector2 GetDirectionTotarget()
+        {
+            var direction = _target.transform.position - transform.position;
+            direction.y = 0f;
+            return direction.normalized;
+        }
         private void StartState(IEnumerator coroutine)
         {
             _creature.SetDirection(Vector2.zero);
@@ -104,6 +120,7 @@ namespace PixselCrew.Creatures
             Debug.Log("AI die");
             _isDead = true;
             _animator.SetBool(isDeadKey, true);
+            _creature.SetDirection(Vector2.zero);
             if (_current != null)
                 StopCoroutine(_current);
 
