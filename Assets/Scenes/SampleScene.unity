@@ -823,7 +823,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1155139337
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2474,7 +2474,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1155139337
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -8399,7 +8399,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 491591139
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -11204,7 +11204,7 @@ PrefabInstance:
     - target: {fileID: 2382183451370861091, guid: 4636a1b4564a28e449877bedad9c51da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: 1.556
       objectReference: {fileID: 0}
     - target: {fileID: 2382183451370861091, guid: 4636a1b4564a28e449877bedad9c51da,
         type: 3}
@@ -13887,6 +13887,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -14975,12 +14978,12 @@ PrefabInstance:
     - target: {fileID: 4999931129052630106, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.35
+      value: 1.091
       objectReference: {fileID: 0}
     - target: {fileID: 4999931129052630106, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.435
+      value: 1.407
       objectReference: {fileID: 0}
     - target: {fileID: 4999931129052630106, guid: 05a5a00ade83c9848977b2e9c1fa02a4,
         type: 3}
@@ -15414,6 +15417,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8948000689884998529, guid: a5bc79c3feff2b649a4977ea885c70aa,
+        type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8948000689884998535, guid: a5bc79c3feff2b649a4977ea885c70aa,
         type: 3}
       propertyPath: m_Name

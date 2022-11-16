@@ -1,50 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1845754580345219709
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2060193314753981248}
-  - component: {fileID: 874901458484310092}
-  m_Layer: 0
-  m_Name: StuckedSwordSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2060193314753981248
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845754580345219709}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8235637641102850013}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &874901458484310092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845754580345219709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc9f59a8c885fb4484e482066725b7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2060193314753981248}
-  _prefab: {fileID: 8235637641102850018, guid: ba59ef348ff11df44a2cac018e224419, type: 3}
 --- !u!1 &8235637641102850018
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,12 +14,10 @@ GameObject:
   - component: {fileID: 6207166680076235211}
   - component: {fileID: 8206861192593714876}
   - component: {fileID: 3025079212310611885}
-  - component: {fileID: 1603887884483014162}
-  - component: {fileID: 8387436071655440393}
-  - component: {fileID: 5111257000328089802}
   - component: {fileID: 2485005484271803792}
+  - component: {fileID: 1991795116911243932}
   m_Layer: 0
-  m_Name: SworProjectile
+  m_Name: StuckedSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +33,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.45, y: -0.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2060193314753981248}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,10 +73,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1155139337
+  m_SortingLayerID: 1265987289
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83b2379d527dfb54189b662eab5b5e33, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 810c99537e268a140b01d37d9e81a734, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,13 +101,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _clips:
-  - _name: spinning
+  - _name: idle
     _sprites:
-    - {fileID: 21300000, guid: 83b2379d527dfb54189b662eab5b5e33, type: 3}
-    - {fileID: 21300000, guid: f0e6c68e37018a7459ebaee30e13082d, type: 3}
-    - {fileID: 21300000, guid: 2e2380f9ee8750a47b6265bc5cdb75d8, type: 3}
-    - {fileID: 21300000, guid: 9abe7dc6c1ef4a94eae4d6fadff9bd21, type: 3}
-    _loop: 1
+    - {fileID: 21300000, guid: 810c99537e268a140b01d37d9e81a734, type: 3}
+    - {fileID: 21300000, guid: 795abf4d7a1578f4f80a966237008fe3, type: 3}
+    - {fileID: 21300000, guid: 69b7688651f1dc948b7440b917c2a04b, type: 3}
+    - {fileID: 21300000, guid: ebd0ff119a4968a45a7d610cb2fcda6d, type: 3}
+    _loop: 0
     _allowNextClip: 0
     _onComplate:
       m_PersistentCalls:
@@ -209,21 +161,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
---- !u!114 &1603887884483014162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235637641102850018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2564b7fc0b4e9a4eb1b30915d9dce75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0.1
---- !u!114 &8387436071655440393
+  m_Radius: 0.3125
+--- !u!114 &2485005484271803792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,15 +174,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cfea3da47f5db4aae61de5eb35ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Enemy
+  _tag: Player
   _layer:
     serializedVersion: 2
     m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5111257000328089802}
-        m_MethodName: ApplyDamag
+      - m_Target: {fileID: 1991795116911243932}
+        m_MethodName: ArmHero
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -264,7 +203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5111257000328089802
+--- !u!114 &1991795116911243932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,48 +212,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8235637641102850018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33f1765405838964b8b029621243aaf8, type: 3}
+  m_Script: {fileID: 11500000, guid: b8620b3818fbb7f4c806668d1610cd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damag: -1
---- !u!114 &2485005484271803792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235637641102850018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cfea3da47f5db4aae61de5eb35ac83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 1280
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 874901458484310092}
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6207166680076235211}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
