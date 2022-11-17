@@ -105,7 +105,7 @@ namespace PixselCrew.Creatures
         public void AddCoin(int valCoin)
         {
             _session.Data.Coins += valCoin;
-            Debug.Log(string.Format("монет: {0}", _session.Data.Coins));
+            //Debug.Log(string.Format("монет: {0}", _session.Data.Coins));
         }
 
         public override void TakeDamage()
