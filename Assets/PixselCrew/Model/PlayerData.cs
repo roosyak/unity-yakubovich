@@ -8,6 +8,7 @@ namespace PixselCrew
         public int Coins;
         public int Hp;
         public bool IsArmed;
+        public int Arms;
 
         public PlayerData clone()
         {

@@ -42,10 +42,11 @@ namespace PixselCrew.Creatures
         public void Throw()
         {
             if (_throwCoolDown.IsReady)
-            {
-                Animator.SetTrigger(ThrowKey);
-                _throwCoolDown.Reset();
-            }
+                if (ArmDec())
+                {
+                    Animator.SetTrigger(ThrowKey);
+                    _throwCoolDown.Reset();
+                }
         }
 
         public void OnDoThrow()
@@ -177,8 +178,26 @@ namespace PixselCrew.Creatures
 
         public void ArmHero()
         {
+            ArmInc();
             _session.Data.IsArmed = true;
             UpdateHeroWeapon();
+        }
+
+        private void ArmInc()
+        {
+            _session.Data.Arms++;
+            //Debug.Log(string.Format("Arms: {0}", _session.Data.Arms));
+        }
+
+        private bool ArmDec()
+        {
+            if (_session.Data.Arms > 1)
+            {
+                _session.Data.Arms--;
+                //Debug.Log(string.Format("Arms: {0}", _session.Data.Arms));
+                return true;
+            }
+            return false;
         }
 
         private void UpdateHeroWeapon()
