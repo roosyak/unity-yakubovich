@@ -7,13 +7,18 @@ namespace PixselCrew.Creatures.Weapons
     {
 
         [SerializeField] private float _speed;
+        [SerializeField] private bool _invertX;
+
         private Rigidbody2D _rigidbody;
         private int _direction;
 
         private void Start()
         {
-            // направление движения меча 
-            _direction = transform.lossyScale.x > 0 ? 1 : -1;
+            // инвертировать направление  
+            var mod = _invertX ? -1 : 1;
+
+            // направление движения «объекта» 
+            _direction = mod * transform.lossyScale.x > 0 ? 1 : -1;
             _rigidbody = GetComponent<Rigidbody2D>();
 
             // для Dynamic
@@ -21,13 +26,13 @@ namespace PixselCrew.Creatures.Weapons
             _rigidbody.AddForce(force, ForceMode2D.Impulse);
         }
 
-       /*
-         // для Kinematic
-        private void FixedUpdate()
-        {
-            var position = _rigidbody.position;
-            position.x += _direction * _speed;
-            _rigidbody.MovePosition(position);
-        }*/
+        /*
+          // для Kinematic
+         private void FixedUpdate()
+         {
+             var position = _rigidbody.position;
+             position.x += _direction * _speed;
+             _rigidbody.MovePosition(position);
+         }*/
     }
 }
