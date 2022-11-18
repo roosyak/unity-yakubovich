@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1766210544}
   - component: {fileID: 1766210545}
   - component: {fileID: 2100856212}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: InterectionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5276,7 +5276,7 @@ GameObject:
   - component: {fileID: 7411152342485760358}
   - component: {fileID: 7411152342485760359}
   - component: {fileID: 7411152342485760352}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5340,7 +5340,7 @@ GameObject:
   - component: {fileID: 7411152342546075318}
   - component: {fileID: 7411152342546075317}
   - component: {fileID: 224563839}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5451,7 +5451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343040931726}
   _prefab: {fileID: 8235637641102850018, guid: cc5705569ccdc1f42aebd0cd029262c4, type: 3}
-  _invertXScale: 0
 --- !u!1 &7411152343392771907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,7 +5496,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343392771906}
   _prefab: {fileID: 8235637641102850018, guid: 1e08e7cddcde371419cf3b629c3d5c7e, type: 3}
-  _invertXScale: 0
 --- !u!1 &7411152343692671198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,7 +5541,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343692671197}
   _prefab: {fileID: 8235637641102850018, guid: b3bce3168fd0ac944b000cec9e4172d3, type: 3}
-  _invertXScale: 0
 --- !u!1 &7411152343888450981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,7 +5586,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343888450980}
   _prefab: {fileID: 8235637641102850018, guid: d70a0a1f344c02d4d848b7847550e70b, type: 3}
-  _invertXScale: 0
 --- !u!1 &8948867180171076088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,4 +5631,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1956630745155722041}
   _prefab: {fileID: 8235637641102850018, guid: 068d000823ace9646a89cbecbe7d079a, type: 3}
-  _invertXScale: 0

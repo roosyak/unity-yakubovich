@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4186646850829335223}
   - component: {fileID: 4186646850829335217}
   - component: {fileID: 4186646850829335222}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SilverCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 4186646850904784824}
   - component: {fileID: 4186646850904784826}
   - component: {fileID: 4186646850904784827}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Destroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
