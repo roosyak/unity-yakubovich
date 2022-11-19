@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 4186646850829335216}
   - component: {fileID: 4186646850829335223}
   - component: {fileID: 4186646850829335217}
+  - component: {fileID: 3759117373614159470}
   - component: {fileID: 4186646850829335222}
+  - component: {fileID: 5768195947970699069}
   m_Layer: 13
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -182,6 +184,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!50 &3759117373614159470
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186646850829335221}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &4186646850829335222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +230,21 @@ MonoBehaviour:
     _onComplate:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &5768195947970699069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186646850829335221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069bb6a74d831e34c839447b617e1325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 7
+  _amplitude: 0.1
+  _randomize: 1
 --- !u!1 &4186646850904784825
 GameObject:
   m_ObjectHideFlags: 0
