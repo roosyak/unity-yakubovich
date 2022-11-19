@@ -6,6 +6,7 @@ namespace PixselCrew.Utils
     [Serializable]
     public class Cooldown
     {
+        // сколько секунд ждать 
         [SerializeField] private float _value;
 
         private float _timesUp;
