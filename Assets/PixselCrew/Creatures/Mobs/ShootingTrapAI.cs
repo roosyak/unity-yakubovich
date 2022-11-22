@@ -6,7 +6,7 @@ namespace PixselCrew.Creatures
 {
     public class ShootingTrapAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
+        [SerializeField] public LayerCheck _vision;
         [SerializeField] private Cooldown _cooldown;
         [SerializeField] private SpriteAnimation _animation;
 
@@ -18,11 +18,10 @@ namespace PixselCrew.Creatures
             }
         }
 
-        private void Shoot()
+        public void Shoot()
         {
             _cooldown.Reset();
             _animation.SetClip("start-attack");
         }
     }
 }
- 

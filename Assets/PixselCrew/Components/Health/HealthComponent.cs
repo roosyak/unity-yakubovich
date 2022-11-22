@@ -8,7 +8,7 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private int _health = 1;
     [SerializeField] private UnityEvent _onDamage;
-    [SerializeField] private UnityEvent _onDie;
+    [SerializeField] public UnityEvent _onDie;
     [SerializeField] private HealthChangeEvent _onChange;
 
     /// <summary>
@@ -54,6 +54,11 @@ public class HealthComponent : MonoBehaviour
     public void SetHealth(int health)
     {
         _health = health;
+    }
+
+    private void OnDestroy()
+    {
+        _onDie.RemoveAllListeners();
     }
 
     [Serializable]
