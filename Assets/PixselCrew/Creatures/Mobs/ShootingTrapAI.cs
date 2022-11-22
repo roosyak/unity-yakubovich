@@ -7,61 +7,22 @@ namespace PixselCrew.Creatures
     public class ShootingTrapAI : MonoBehaviour
     {
         [SerializeField] private LayerCheck _vision;
+        [SerializeField] private Cooldown _cooldown;
+        [SerializeField] private SpriteAnimation _animation;
 
-        [Header("Melle")]
-        [SerializeField] private Cooldown _meleeCoolDown;
-        [SerializeField] private CheckCircleOverlap _meleeAttack;
-        [SerializeField] private LayerCheck _meleeCanAttack;
-
-        [Header("Range")]
-        [SerializeField] private Cooldown _rangeCoolDown;
-        [SerializeField] private SpawnComponent _rangeAtack;
-
-
-        private int Melee = Animator.StringToHash("melee");
-        private int Range = Animator.StringToHash("range");
-        private Animator _animator;
-
-        private void Awake()
-        {
-            _animator = GetComponent<Animator>();
-        }
         private void Update()
         {
-            if (_vision.IsTouchingLayer)
+            if (_vision.IsTouchingLayer && _cooldown.IsReady)
             {
-                if (_meleeCanAttack.IsTouchingLayer)
-                {
-                    if (_meleeCoolDown.IsReady)
-                        MelleAttack();
-                    return;
-                }
-
-                if (_rangeCoolDown.IsReady)
-                    RangeAttack();
+                Shoot();
             }
         }
 
-        private void RangeAttack()
+        private void Shoot()
         {
-            _rangeCoolDown.Reset();
-            _animator.SetTrigger(Range);
-        }
-
-        private void MelleAttack()
-        {
-            _meleeCoolDown.Reset();
-            _animator.SetTrigger(Melee);
-        }
-
-        public void OnMeleeAttack()
-        {
-            _meleeAttack.Check();
-        }
-
-        public void OnRangeAttack()
-        {
-            _rangeAtack.Spawn();
+            _cooldown.Reset();
+            _animation.SetClip("start-attack");
         }
     }
 }
+ 

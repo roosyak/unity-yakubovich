@@ -5376,7 +5376,7 @@ MonoBehaviour:
   _radius: 0.2
   _mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65040
   _tags:
   - Enemy
   _onOverlap:

@@ -30,8 +30,9 @@ public class NewRandomCoinsComponent : MonoBehaviour
     {
         for (var i = 0; i < count; i++)
         {
-            var instante = Instantiate(go, SetRandomPosition(transform.position), Quaternion.identity);
-            instante.transform.localScale = transform.lossyScale;
+            Spawn(go);
+           // var instante = Instantiate(go, SetRandomPosition(transform.position), Quaternion.identity);
+           // instante.transform.localScale = transform.lossyScale;
         }
     }
 
@@ -40,5 +41,16 @@ public class NewRandomCoinsComponent : MonoBehaviour
         var x = Random.Range(-0.9f, 0.9f);
         var y = Random.Range(0, 0.9f);
         return new Vector3(vp.x + x, vp.y + y, vp.z);
+    }
+
+    private void Spawn(GameObject go)
+    {
+        var instante = Instantiate(go, SetRandomPosition(transform.position), Quaternion.identity);
+        instante.transform.localScale = transform.lossyScale;
+    }
+    public void DropImmediate(GameObject[] items)
+    {
+        foreach (var item in items)
+            Spawn(item);
     }
 }

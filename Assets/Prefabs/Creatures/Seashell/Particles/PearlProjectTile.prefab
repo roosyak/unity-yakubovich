@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2564b7fc0b4e9a4eb1b30915d9dce75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
-  _invertX: 1
+  Speed: 1
+  InvertX: 0
 --- !u!114 &2233196652693958271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 2305
+    m_Bits: 2304
   _action:
     m_PersistentCalls:
       m_Calls:
