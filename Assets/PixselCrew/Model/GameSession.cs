@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-namespace PixselCrew
+namespace PixselCrew.Model
 {
     public class GameSession : MonoBehaviour
     {

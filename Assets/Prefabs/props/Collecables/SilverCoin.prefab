@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4186646850829335220}
   - component: {fileID: 4186646850829335218}
   - component: {fileID: 4186646850829335219}
-  - component: {fileID: 4186646850829335216}
   - component: {fileID: 4186646850829335223}
   - component: {fileID: 4186646850829335217}
   - component: {fileID: 3759117373614159470}
   - component: {fileID: 4186646850829335222}
   - component: {fileID: 5768195947970699069}
+  - component: {fileID: 1065470285285094766}
   m_Layer: 13
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -106,19 +106,6 @@ CircleCollider2D:
   m_Offset: {x: 0.010015875, y: 0.02}
   serializedVersion: 2
   m_Radius: 0.17321166
---- !u!114 &4186646850829335216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4186646850829335221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bebbbd5ea4e21ec41b1299cf98ce51b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _price: 1
 --- !u!114 &4186646850829335223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,9 +138,9 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4186646850829335216}
-        m_MethodName: SetPrice
-        m_Mode: 1
+      - m_Target: {fileID: 1065470285285094766}
+        m_MethodName: Add
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -245,6 +232,20 @@ MonoBehaviour:
   _frequency: 7
   _amplitude: 0.1
   _randomize: 1
+--- !u!114 &1065470285285094766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186646850829335221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8411a9180e2d0ee4e9ba7c887db780d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _value: 1
 --- !u!1 &4186646850904784825
 GameObject:
   m_ObjectHideFlags: 0

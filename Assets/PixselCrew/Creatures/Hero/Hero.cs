@@ -1,5 +1,7 @@
 ﻿using UnityEditor.Animations;
 using UnityEngine;
+using PixselCrew.Model;
+using PixselCrew.Utils;
 namespace PixselCrew.Creatures
 {
     public class Hero : Creature
@@ -10,7 +12,7 @@ namespace PixselCrew.Creatures
         [SerializeField] private float _slamDownVilocity;
         [SerializeField] private float _interactionRadius;
 
-        [SerializeField] private PixselCrew.Utils.Cooldown _throwCoolDown;
+        [SerializeField] private Cooldown _throwCoolDown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
 
@@ -26,6 +28,12 @@ namespace PixselCrew.Creatures
 
         private bool _allDoubleJump;
 
+        private const string idCoin = "Coin";
+        private const string idSword = "Sword";
+
+        private int CoinsCount => _session.Data.Inventory.Count(idCoin);
+        private int SwordCount => _session.Data.Inventory.Count(idSword);
+
         protected override void Awake()
         {
             base.Awake();
@@ -35,10 +43,23 @@ namespace PixselCrew.Creatures
         {
             _session = FindObjectOfType<GameSession>();
             var heals = GetComponent<HealthComponent>();
+
+            // добавляем подписчика 
+            _session.Data.Inventory.OnChanged += OnInventoryChanged;
             heals.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
         }
 
+        private void OnDestroy()
+        {
+            _session.Data.Inventory.OnChanged -= OnInventoryChanged;
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == idSword)
+                UpdateHeroWeapon();
+        }
         public void Throw()
         {
             if (_throwCoolDown.IsReady)
@@ -101,17 +122,21 @@ namespace PixselCrew.Creatures
             return base.CalculateJumpVelocity(Y);
         }
 
-
-        public void AddCoin(int valCoin)
+        public void AddInInventory(string id, int value)
         {
-            _session.Data.Coins += valCoin;
-            //Debug.Log(string.Format("монет: {0}", _session.Data.Coins));
+            _session.Data.Inventory.Add(id, value);
         }
+
+        /* public void AddCoin(int valCoin)
+         {
+             _session.Data.Coins += valCoin;
+             //Debug.Log(string.Format("монет: {0}", _session.Data.Coins));
+         }*/
 
         public override void TakeDamage()
         {
             base.TakeDamage();
-            if (_session.Data.Coins > 0)
+            if (CoinsCount > 0)
                 SpawnCoins();
         }
 
@@ -120,8 +145,9 @@ namespace PixselCrew.Creatures
         /// </summary>
         private void SpawnCoins()
         {
-            var numCoinsToDispase = Mathf.Min(_session.Data.Coins, 5);
-            _session.Data.Coins -= numCoinsToDispase;
+            var numCoinsToDispase = Mathf.Min(CoinsCount, 5);
+
+            _session.Data.Inventory.Remove(idCoin, numCoinsToDispase);
 
             var burst = _hitParticle.emission.GetBurst(0);
             burst.count = numCoinsToDispase;
@@ -169,31 +195,36 @@ namespace PixselCrew.Creatures
 
         public override void Attack()
         {
-            if (!_session.Data.IsArmed)
+            if (SwordCount <= 0)
                 return;
             base.Attack();
         }
 
 
 
-        public void ArmHero()
+        /*public void ArmHero()
         {
             ArmInc();
             _session.Data.IsArmed = true;
             UpdateHeroWeapon();
-        }
+        }*/
 
         private void ArmInc()
         {
-            _session.Data.Arms++;
+            //_session.Data.Arms++;
+
+            _session.Data.Inventory.Add(idSword, 1);
             //Debug.Log(string.Format("Arms: {0}", _session.Data.Arms));
         }
 
         private bool ArmDec()
         {
-            if (_session.Data.Arms > 1)
+            //if (_session.Data.Arms > 1)
+            if (SwordCount > 1)
             {
-                _session.Data.Arms--;
+                // _session.Data.Arms--;
+
+                _session.Data.Inventory.Remove(idSword, 1);
                 //Debug.Log(string.Format("Arms: {0}", _session.Data.Arms));
                 return true;
             }
@@ -202,7 +233,8 @@ namespace PixselCrew.Creatures
 
         private void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
 
         }
     }

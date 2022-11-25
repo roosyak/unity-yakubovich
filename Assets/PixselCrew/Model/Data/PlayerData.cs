@@ -1,14 +1,15 @@
 ﻿using System;
 using UnityEngine;
-namespace PixselCrew
+namespace PixselCrew.Model
 {
     [Serializable]
     public class PlayerData
     {
-        public int Coins;
-        public int Hp;
-        public bool IsArmed;
-        public int Arms;
+        [SerializeField] private InventoryData _inventory;
+         
+        public int Hp; 
+
+        public InventoryData Inventory => _inventory;
 
         public PlayerData clone()
         {
