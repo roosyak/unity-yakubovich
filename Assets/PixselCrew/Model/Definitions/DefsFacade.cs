@@ -6,7 +6,10 @@ using UnityEngine;
 namespace PixselCrew.Model
 {
     /*
-     объект который хранит в себе описания 
+     объект который хранит в себе описания (не изменяемые данные)
+
+    чтобы из любого места в приложении могли достучаться до списка 
+    всех описаний предметов 
      */
     [CreateAssetMenu(menuName = "Defs/DefsFacade", fileName = "DefsFacade")]
     public class DefsFacade : ScriptableObject

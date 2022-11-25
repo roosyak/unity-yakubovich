@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using PixselCrew.Model;
 
 namespace PixselCrew.Model
 {
@@ -8,7 +9,7 @@ namespace PixselCrew.Model
     public class InventoryData
     {
         [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
-        
+
         // описание метода 
         public delegate void OnInventoryChanged(string id, int value);
 
@@ -71,7 +72,7 @@ namespace PixselCrew.Model
     [Serializable]
     public class InventoryItemData
     {
-        public string Id;
+        [InventoryIdAttribut] public string Id;
         public int Value;
 
         public InventoryItemData(string id)

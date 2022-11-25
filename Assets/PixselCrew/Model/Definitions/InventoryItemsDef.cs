@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System;
+using UnityEditor;
 
 namespace PixselCrew.Model
 {
     /*
-        Класс описаний предметов 
+        Класс описаний предметов (не изменяемые данные)
      */
     [CreateAssetMenu(menuName = "Defs/InventoryItems", fileName = "InventoryItems")]
     public class InventoryItemsDef : ScriptableObject
@@ -19,6 +20,10 @@ namespace PixselCrew.Model
 
             return default;
         }
+#if UNITY_EDITOR
+        // доступ к списку, только в редакторе 
+        public ItemDef[] ItemsForEditor => _items;
+#endif
     }
 
     [Serializable]

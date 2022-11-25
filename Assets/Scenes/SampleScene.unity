@@ -2177,6 +2177,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627710174}
     m_Modifications:
+    - target: {fileID: 1065470285285094766, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
+        type: 3}
+      propertyPath: _id
+      value: Coin
+      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335216, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
         type: 3}
       propertyPath: _hero
@@ -14977,6 +14982,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1534133480}
     m_Modifications:
+    - target: {fileID: 5190574313606735036, guid: a5bc79c3feff2b649a4977ea885c70aa,
+        type: 3}
+      propertyPath: _id
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 8948000689884998535, guid: a5bc79c3feff2b649a4977ea885c70aa,
         type: 3}
       propertyPath: m_Name

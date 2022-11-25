@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using PixselCrew.Creatures;
+using PixselCrew.Model;
 
 namespace PixselCrew.Components
 {
+    /*
+     общий компонент добавления произвольного объекта к герою 
+     */
     public class InventoryAddComponent : MonoBehaviour
     {
-        [SerializeField] private string _id;
+        [InventoryIdAttribut] [SerializeField] private string _id;
         [SerializeField] private int _value;
 
         public void Add(GameObject go)
