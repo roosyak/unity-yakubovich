@@ -5071,21 +5071,6 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7411152342109114258}
-        m_MethodName: OnSaySomethig
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: fbb2ad0e-993f-4784-9f1b-1924e277dd2d
-    m_ActionName: Hero/SaySomethig[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7411152342109114258}
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -5128,6 +5113,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ea781a43-6246-421a-97c5-9691ed1a0ba3
     m_ActionName: Hero/Throw[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7411152342109114258}
+        m_MethodName: OnUse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 32330b92-1dfa-444d-aa6e-f191baa92c2a
+    m_ActionName: Hero/Use[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5265,6 +5265,8 @@ MonoBehaviour:
     Component: {fileID: 7411152343392771905}
   - id: Throw
     Component: {fileID: 3732890117623817256}
+  - id: Attack
+    Component: {fileID: 7411152343040931725}
 --- !u!1 &7411152342485760353
 GameObject:
   m_ObjectHideFlags: 0

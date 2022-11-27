@@ -25,6 +25,8 @@ namespace PixselCrew.Creatures
         // private Collider2D[] _interactionResult = new Collider2D[1];
 
         private GameSession _session;
+        private HealthComponent _health;
+
 
         private bool _allDoubleJump;
 
@@ -39,14 +41,24 @@ namespace PixselCrew.Creatures
             base.Awake();
         }
 
+        public void UsePotion()
+        {
+            var potionCount = _session.Data.Inventory.Count("HealthPotion");
+            if (potionCount > 0)
+            { 
+                _session.Data.Hp += 7;
+                _session.Data.Inventory.Remove("HealthPotion", 1);
+            }
+        }
+
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            var heals = GetComponent<HealthComponent>();
+            _health = GetComponent<HealthComponent>();
 
             // добавляем подписчика 
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
-            heals.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
         }
 
