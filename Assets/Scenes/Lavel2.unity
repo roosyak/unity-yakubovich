@@ -930,7 +930,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1155139337
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -3116,7 +3116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4700003, y: -3.4299998, z: -10}
+  m_LocalPosition: {x: 6.692022, y: -3.476546, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3457,7 +3457,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 491591139
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4462,7 +4462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226712306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4700003, y: -3.4299998, z: -10}
+  m_LocalPosition: {x: 4.2700005, y: -3.4599998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1287768726}
@@ -5622,9 +5622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Coins: 0
+    _inventory:
+      _inventory: []
     Hp: 10
-    IsArmed: 0
 --- !u!4 &1691241077
 Transform:
   m_ObjectHideFlags: 0
@@ -6603,12 +6603,12 @@ PrefabInstance:
     - target: {fileID: 7411152342109114259, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.7
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7411152342109114259, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.38
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 7411152342109114259, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
         type: 3}
