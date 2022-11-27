@@ -198,6 +198,8 @@ namespace PixselCrew.Creatures
             if (SwordCount <= 0)
                 return;
             base.Attack();
+            _particles.Spawn("Attack");
+            //_attack.Spawn();
         }
 
 
