@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using PixselCrew.Components;
 
 namespace PixselCrew.Creatures
 {
@@ -22,6 +23,7 @@ namespace PixselCrew.Creatures
         private Vector2 _direction;
         protected Rigidbody2D Rigidbody;
         protected Animator Animator;
+        protected PlaySoudsComponent Sounds;
         protected bool IsGrounded;
         private bool _isJumping;
 
@@ -36,6 +38,7 @@ namespace PixselCrew.Creatures
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoudsComponent>();
         }
 
         public void SetDirection(Vector2 direction)
@@ -91,12 +94,16 @@ namespace PixselCrew.Creatures
         {
             if (IsGrounded)
             {
-                //Y += _jumpSpeed;
                 Y = _jumpSpeed;
-                _particles.Spawn("Jump");
-                // _jamp.Spawn();
+                DoJumpVfx();
             }
             return Y;
+        }
+
+        protected void DoJumpVfx()
+        {
+            _particles.Spawn("Jump");
+            Sounds.Play("Jump");
         }
 
         public void UpdateSpriteDirection(Vector2 direction)
@@ -118,6 +125,7 @@ namespace PixselCrew.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
+            Sounds.Play("Melee");
             // _particles.Spawn("Attack");
             //_attack.Spawn();
         }

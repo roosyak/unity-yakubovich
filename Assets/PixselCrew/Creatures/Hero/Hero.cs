@@ -45,7 +45,7 @@ namespace PixselCrew.Creatures
         {
             var potionCount = _session.Data.Inventory.Count("HealthPotion");
             if (potionCount > 0)
-            { 
+            {
                 _session.Data.Hp += 7;
                 _session.Data.Inventory.Remove("HealthPotion", 1);
             }
@@ -84,6 +84,7 @@ namespace PixselCrew.Creatures
 
         public void OnDoThrow()
         {
+            Sounds.Play("Range");
             _particles.Spawn("Throw");
         }
 
@@ -126,9 +127,8 @@ namespace PixselCrew.Creatures
         {
             if (!IsGrounded && _allDoubleJump)
             {
-                _particles.Spawn("Jump");
-                // Y = _jumpSpeed;
                 _allDoubleJump = false;
+                DoJumpVfx();
                 return _jumpSpeed;
             }
             return base.CalculateJumpVelocity(Y);
