@@ -40,10 +40,11 @@ AudioSource:
   m_GameObject: {fileID: 597001454}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 31e2bd488a360144d8b43ef60948c532,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 8a4f5fd1b26357444a4f0980e46dac74, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.546
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -176,7 +177,8 @@ AudioSource:
   m_GameObject: {fileID: 1119438807}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4cdd2579ffd609d49ae0848d5e2ebbea,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5565,6 +5567,8 @@ MonoBehaviour:
   - _id: Range
     _clip: {fileID: 8300000, guid: 759c94999f5083844990ddd9ae54e733, type: 3}
   - _id: Hurt
+    _clip: {fileID: 8300000, guid: bdb21f7b82829654e8f5cd168bb17189, type: 3}
+  - _id: Sword
     _clip: {fileID: 8300000, guid: bdb21f7b82829654e8f5cd168bb17189, type: 3}
 --- !u!1 &7411152342485760353
 GameObject:

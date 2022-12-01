@@ -78,6 +78,7 @@ namespace PixselCrew.Creatures
                 if (ArmDec())
                 {
                     Animator.SetTrigger(ThrowKey);
+                    Sounds.Play("Sword");
                     _throwCoolDown.Reset();
                 }
         }
