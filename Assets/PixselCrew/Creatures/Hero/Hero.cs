@@ -4,7 +4,7 @@ using PixselCrew.Model;
 using PixselCrew.Utils;
 namespace PixselCrew.Creatures
 {
-    public class Hero : Creature
+    public class Hero : Creature, ICanAddInInventory
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         //  [SerializeField] private LayerMask _interactionLayer;

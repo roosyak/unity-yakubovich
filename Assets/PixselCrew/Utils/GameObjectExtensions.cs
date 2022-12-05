@@ -13,4 +13,13 @@ public static class GameObjectExtentions
 
         return layer == (layer | 1 << go.layer);
     }
+
+    public static TInterfaceType GetInterface<TInterfaceType>(this GameObject go)
+    {
+        var com = go.GetComponents<Component>();
+        foreach (var c in com)
+            if (c is TInterfaceType type)
+                return type;
+        return default;
+    }
 }

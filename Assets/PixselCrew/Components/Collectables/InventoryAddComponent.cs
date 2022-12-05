@@ -14,9 +14,8 @@ namespace PixselCrew.Components
 
         public void Add(GameObject go)
         {
-            var hero = go.GetComponent<Hero>();
-            if (hero != null)
-                hero.AddInInventory(_id, _value);
+            var hero = go.GetInterface<ICanAddInInventory>();
+            hero?.AddInInventory(_id, _value);
         }
     }
 }
