@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152342109114259}
-  _prefab: {fileID: 7411152342109114269, guid: 0cffb3a80f9209842860210ae17e40a6, type: 3}
+  _prefab: {fileID: 7411152342109114269, guid: 9d273bf60ae4dc64095335d83220d78f, type: 3}
 --- !u!1 &764283211502049514
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 7411152342109114259}
   - component: {fileID: 7411152342109114268}
   - component: {fileID: 7411152342109114262}
-  - component: {fileID: 7411152342109114263}
+  - component: {fileID: 4277662940477425781}
   - component: {fileID: 7411152342109114261}
   - component: {fileID: 7411152342109114260}
   - component: {fileID: 4785075534688884388}
@@ -259,9 +259,9 @@ GameObject:
   - component: {fileID: 6665747968562289478}
   - component: {fileID: 1158624301}
   - component: {fileID: 1158624292}
-  - component: {fileID: 1813369238}
+  - component: {fileID: 57260825}
   m_Layer: 0
-  m_Name: Sharky
+  m_Name: Crabby
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ SpriteRenderer:
   m_SortingLayerID: 491591139
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 308614e35c6b87a40aa212e8f5d72f37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b35195b1974e4a247812022db182673a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -361,8 +361,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &7411152342109114263
-CapsuleCollider2D:
+--- !u!60 &4277662940477425781
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -374,9 +374,26 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019875169, y: -0.051238954}
-  m_Size: {x: 0.60564816, y: 0.7276553}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.25, y: 1}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.38681015, y: 0.064008}
+      - {x: 0.32389212, y: 0.15645897}
+      - {x: -0.1779891, y: 0.13780308}
+      - {x: -0.29645678, y: -0.005121231}
+      - {x: -0.31244764, y: -0.16110992}
+      - {x: -0.16471577, y: -0.37547028}
+      - {x: 0.32363084, y: -0.3621446}
+      - {x: 0.39093855, y: -0.16084862}
 --- !u!95 &7411152342109114261
 Animator:
   serializedVersion: 3
@@ -387,7 +404,7 @@ Animator:
   m_GameObject: {fileID: 7411152342109114269}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: b6c06e1913437bc4380c6d74c4ada8fd, type: 2}
+  m_Controller: {fileID: 22100000, guid: bfc120f26f4236d42ac7c7d615a8ea88, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -408,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd438d8e853e5cf4083961e33fb71236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 2
+  _health: 5
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -551,7 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7411152342109114269}
---- !u!114 &1813369238
+--- !u!114 &57260825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
