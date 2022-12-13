@@ -13,13 +13,12 @@ namespace PixselCrew.Creatures.Weapons
             Rigidbody.AddForce(force, ForceMode2D.Impulse);
         }
 
-        /*
-          // для Kinematic
-         private void FixedUpdate()
-         {
-             var position = _rigidbody.position;
-             position.x += _direction * _speed;
-             _rigidbody.MovePosition(position);
-         }*/
+        public void InvertRT() {
+
+            transform.localScale = new Vector3(transform.localScale.x*-1, 1, 1);
+            Speed *= 2;
+            Start();
+
+        }
     }
 }

@@ -29,6 +29,10 @@ namespace PixselCrew.Components
                 _action?.Invoke(other.gameObject);
             
         }
+
+        public void SetTag(string tag) {
+            _tag = tag;
+        }
     }
 }
 

@@ -60,9 +60,10 @@ GameObject:
   - component: {fileID: 8206861192593714876}
   - component: {fileID: 3025079212310611885}
   - component: {fileID: 1603887884483014162}
-  - component: {fileID: 8387436071655440393}
   - component: {fileID: 5111257000328089802}
+  - component: {fileID: 8387436071655440393}
   - component: {fileID: 2485005484271803792}
+  - component: {fileID: 5119704041562965793}
   m_Layer: 0
   m_Name: SworProjectile
   m_TagString: Untagged
@@ -224,6 +225,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   InvertX: 0
+--- !u!114 &5111257000328089802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235637641102850018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f1765405838964b8b029621243aaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damag: -1
 --- !u!114 &8387436071655440393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +253,7 @@ MonoBehaviour:
   _tag: Enemy
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 61239
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -265,19 +279,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5111257000328089802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235637641102850018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33f1765405838964b8b029621243aaf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damag: -1
 --- !u!114 &2485005484271803792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,5 +318,46 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5119704041562965793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235637641102850018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cfea3da47f5db4aae61de5eb35ac83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Enemy
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4096
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1603887884483014162}
+        m_MethodName: InvertRT
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8387436071655440393}
+        m_MethodName: SetTag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player
           m_BoolArgument: 0
         m_CallState: 2

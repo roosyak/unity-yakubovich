@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 8193067215297746456}
-  _prefab: {fileID: 8235637641102850018, guid: 540cb5121c641784bac7e506e4cc4725, type: 3}
+  _prefab: {fileID: 8235637641102850018, guid: a74ad728a07d6764faf4e4ad8849f06e, type: 3}
 --- !u!1 &3072546831630405413
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3, y: 0.5}
+  m_Offset: {x: 0, y: 0.35}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -147,7 +147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 2}
+  m_Size: {x: 6, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &4723213795802784134
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 8446171016682241267}
-  _prefab: {fileID: 8235637641102850018, guid: 6c7a8b59d7fdaf540ae3c790018128ff, type: 3}
+  _prefab: {fileID: 8235637641102850018, guid: 3423fef39c5a5b54b9fad3b4be672bdc, type: 3}
 --- !u!1 &7411152342109114269
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1158624301}
   - component: {fileID: 1158624292}
   - component: {fileID: 57260825}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Crabby
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7411152342546075319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.266, y: 0, z: 0}
+  m_LocalPosition: {x: -0.41, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7411152342109114259}
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633de713388dcd14196814f2056559e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.45
+  _radius: 0.6
   _mask:
     serializedVersion: 2
     m_Bits: 2048
@@ -740,7 +740,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.6
 --- !u!114 &1150079658845981185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343040931726}
-  _prefab: {fileID: 8235637641102850018, guid: cc5705569ccdc1f42aebd0cd029262c4, type: 3}
+  _prefab: {fileID: 8235637641102850018, guid: d868b106cf5c09f47b7332d2481e7052, type: 3}
 --- !u!1 &7411152343692671198
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,4 +891,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 7411152343888450980}
-  _prefab: {fileID: 8235637641102850018, guid: d70a0a1f344c02d4d848b7847550e70b, type: 3}
+  _prefab: {fileID: 8235637641102850018, guid: 49ea24e646053274599438b976b79762, type: 3}
