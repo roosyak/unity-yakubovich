@@ -8427,7 +8427,7 @@ PrefabInstance:
     - target: {fileID: 5584412848886931802, guid: f174bab7ac0f2da45b407596679f3baf,
         type: 3}
       propertyPath: _speed
-      value: 0.005
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 5584412848886931802, guid: f174bab7ac0f2da45b407596679f3baf,
         type: 3}
@@ -11365,7 +11365,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 31.328625, y: -1.8370737}
-      - {x: 29.980734, y: 0.26854432}
+      - {x: 30.568361, y: 1.4438004}
       - {x: 29.925955, y: 6.5171175}
       - {x: -0.73145103, y: 6.408304}
       - {x: -0.5779698, y: -5.5}
