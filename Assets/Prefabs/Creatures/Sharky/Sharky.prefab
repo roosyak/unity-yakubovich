@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 6665747968562289478}
   - component: {fileID: 1158624301}
   - component: {fileID: 1158624292}
+  - component: {fileID: 1813369238}
   m_Layer: 0
   m_Name: Sharky
   m_TagString: Enemy
@@ -550,6 +551,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7411152342109114269}
+--- !u!114 &1813369238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411152342109114269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6412c205a5325b14fbad6f10835a9e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _sound: []
 --- !u!1 &7411152342485760353
 GameObject:
   m_ObjectHideFlags: 0
