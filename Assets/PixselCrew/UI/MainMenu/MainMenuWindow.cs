@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using PixselCrew.Utils;
 
 namespace PixselCrew.UI
 {
@@ -9,9 +10,7 @@ namespace PixselCrew.UI
         private Action _cloaseAction;
         public void onShowSettings()
         {
-            var window = Resources.Load<GameObject>("UI/SettingsWindow");
-            var canvas = FindObjectOfType<Canvas>();
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
         public void OnStartGame()
@@ -38,7 +37,7 @@ namespace PixselCrew.UI
         public override void OnCloseAnimationComplete()
         {
             _cloaseAction?.Invoke();
-            base.OnCloseAnimationComplete(); 
+            base.OnCloseAnimationComplete();
         }
     }
 }
