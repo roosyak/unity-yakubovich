@@ -8,7 +8,7 @@ namespace PixselCrew.UI
         private static readonly int show = Animator.StringToHash("Show");
         private static readonly int hide = Animator.StringToHash("Hide");
 
-        public virtual void Start()
+        protected virtual void Start()
         {
             _animator = GetComponent<Animator>();
             _animator.SetTrigger(show);

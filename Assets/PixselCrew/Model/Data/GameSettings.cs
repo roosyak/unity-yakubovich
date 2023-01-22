@@ -9,8 +9,11 @@ namespace PixselCrew.Model
     [CreateAssetMenu(menuName = "Data/GameSettings", fileName = "GameSettings")]
     public class GameSettings : ScriptableObject
     {
-        [SerializeField] private FloatPersistenProperty Music;
-        [SerializeField] private FloatPersistenProperty Sfx;
+        [SerializeField] private FloatPersistenProperty _music;
+        [SerializeField] private FloatPersistenProperty _sfx;
+
+        public FloatPersistenProperty Music => _music;
+        public FloatPersistenProperty Sfx => _sfx;
 
         private static GameSettings _instance;
         public static GameSettings I => _instance == null ? LoadGameSettings() : _instance;
@@ -22,8 +25,8 @@ namespace PixselCrew.Model
 
         private void OnEnable()
         {
-            Music = new FloatPersistenProperty(1, SoundSetting.Music.ToString());
-            Sfx = new FloatPersistenProperty(1, SoundSetting.Sfx.ToString());
+            _music = new FloatPersistenProperty(1, SoundSetting.Music.ToString());
+            _sfx = new FloatPersistenProperty(1, SoundSetting.Sfx.ToString());
         }
 
         private void OnValidate()

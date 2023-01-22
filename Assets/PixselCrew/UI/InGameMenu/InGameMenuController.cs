@@ -7,7 +7,7 @@ namespace PixselCrew.UI
     public class InGameMenuController : AnimatedWindow
     {
         private float _defaultTimeScale;
-        public override void Start()
+        protected override void Start()
         {
             base.Start();
             _defaultTimeScale = Time.timeScale;
