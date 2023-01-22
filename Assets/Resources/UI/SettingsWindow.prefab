@@ -1036,8 +1036,9 @@ GameObject:
   - component: {fileID: 9020431762667399766}
   - component: {fileID: 2181802455670982117}
   - component: {fileID: 1289460650620649361}
+  - component: {fileID: 1939041010986035108}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: OkButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,6 +1159,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 7276655040337054051}
   _presed: {fileID: 722405812401040157}
+--- !u!114 &1939041010986035108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220660300885830421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd0f8f1fdcf4cf4985669718458f6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: d29b0fc8119d3d04f82de4b1ac5e392d, type: 3}
 --- !u!1 &6580484930012187821
 GameObject:
   m_ObjectHideFlags: 0
