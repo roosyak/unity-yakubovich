@@ -5,6 +5,9 @@ using System;
 
 namespace PixselCrew.Model
 {
+    /*
+     конкретный класс с типом который сохраняется на диск 
+     */
     [Serializable]
     public class FloatPersistenProperty : PrefsPersistenProperty<float>
     {

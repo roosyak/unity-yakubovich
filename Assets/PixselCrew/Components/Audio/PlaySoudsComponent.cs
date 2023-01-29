@@ -5,14 +5,18 @@ namespace PixselCrew.Components
 {
     public class PlaySoudsComponent : MonoBehaviour
     {
-        [SerializeField] private AudioSource _source;
         [SerializeField] private AudioData[] _sound;
+        private AudioSource _source;
 
         public void Play(string id)
         {
             foreach (var audioData in _sound)
                 if (audioData.Id == id)
                 {
+
+                    if (_source == null)
+                        // ищем один раз
+                        _source = GameObject.FindWithTag("SfxAudioSource").GetComponent<AudioSource>();
                     _source.PlayOneShot(audioData.Clip);
                     break;
                 }

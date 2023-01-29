@@ -6,7 +6,7 @@ using System;
 namespace PixselCrew.UI
 {
     /*
-     
+    связь модели данных с интерфейсом  
      */
     public class AudioSettingsWidget : MonoBehaviour
     {

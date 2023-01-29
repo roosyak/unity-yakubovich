@@ -4,7 +4,8 @@ using UnityEngine;
 namespace PixselCrew.Model
 {
     /*
-     сохранение настроек игры 
+     модель настроек игры 
+    (ресурсный синголтон, можно получить доступ из любого места в проекте)
      */
     [CreateAssetMenu(menuName = "Data/GameSettings", fileName = "GameSettings")]
     public class GameSettings : ScriptableObject

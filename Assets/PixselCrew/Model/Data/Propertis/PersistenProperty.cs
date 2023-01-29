@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
+using System;
 namespace PixselCrew.Model
 {
+    /*
+     класс для сохранения данных на диск 
+    класс «дженерик»
+     */
+    [Serializable]
     public abstract class PersistenProperty<TPropertyType>
     {
         // отображаемое значение 
@@ -43,7 +49,8 @@ namespace PixselCrew.Model
 
         public void Validate()
         {
-            if (!_stored.Equals(_value)) {
+            if (!_stored.Equals(_value))
+            {
                 Value = _value;
             }
         }
