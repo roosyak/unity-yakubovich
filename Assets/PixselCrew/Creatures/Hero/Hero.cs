@@ -46,7 +46,7 @@ namespace PixselCrew.Creatures
             var potionCount = _session.Data.Inventory.Count("HealthPotion");
             if (potionCount > 0)
             {
-                _session.Data.Hp += 7;
+                _session.Data.Hp.Value += 7;
                 _session.Data.Inventory.Remove("HealthPotion", 1);
             }
         }
@@ -58,7 +58,7 @@ namespace PixselCrew.Creatures
 
             // добавляем подписчика 
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
-            _health.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp.Value);
             UpdateHeroWeapon();
         }
 
@@ -91,7 +91,7 @@ namespace PixselCrew.Creatures
 
         public void OnHealthChanged(int currentHealth)
         {
-            _session.Data.Hp = currentHealth;
+            _session.Data.Hp.Value = currentHealth;
         }
 
 

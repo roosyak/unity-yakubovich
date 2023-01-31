@@ -6,8 +6,8 @@ namespace PixselCrew.Model
     public class PlayerData
     {
         [SerializeField] private InventoryData _inventory;
-         
-        public int Hp; 
+
+        public IntProperty Hp = new IntProperty();
 
         public InventoryData Inventory => _inventory;
 

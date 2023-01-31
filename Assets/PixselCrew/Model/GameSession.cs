@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 namespace PixselCrew.Model
 {
     public class GameSession : MonoBehaviour
@@ -12,6 +13,8 @@ namespace PixselCrew.Model
 
         private void Awake()
         {
+            LoadHud();
+
             if (IsSessionExit())
             {
                 // удаляем из текущей сцены 
@@ -22,6 +25,11 @@ namespace PixselCrew.Model
                 // помещаем объект в «хранилище» которое не удаляется между сценами 
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         public void LoadLastSave()
