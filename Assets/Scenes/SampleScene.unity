@@ -547,11 +547,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Totem1
       objectReference: {fileID: 0}
-    - target: {fileID: 2385883538595359131, guid: d9b8de367db2320419e5d79757306f87,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.381
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b8de367db2320419e5d79757306f87, type: 3}
 --- !u!4 &106506141 stripped
@@ -664,11 +659,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Key (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4992732525302230766, guid: ac8c28b739415804984c026d5ad2fa75,
-        type: 3}
-      propertyPath: _value
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5954450731234053354, guid: ac8c28b739415804984c026d5ad2fa75,
         type: 3}
@@ -8207,7 +8197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11948347, y: -12.11713, z: -501.1953}
+  m_LocalPosition: {x: 0.14885569, y: -12.119556, z: -501.1953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1755193649}
@@ -12006,7 +11996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147601895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.552534, y: -7.227458, z: 1.9902344}
+  m_LocalPosition: {x: 13.12, y: -7.227458, z: 1.9902344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 598375463}
@@ -15390,16 +15380,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1921145573}
     m_Modifications:
-    - target: {fileID: 4186646850829335216, guid: 6bc4c23de5021324086efd23cd2f65a7,
-        type: 3}
-      propertyPath: _hero
-      value: 
-      objectReference: {fileID: 326928938}
-    - target: {fileID: 4186646850829335217, guid: 6bc4c23de5021324086efd23cd2f65a7,
-        type: 3}
-      propertyPath: _layer.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 4186646850829335220, guid: 6bc4c23de5021324086efd23cd2f65a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -15469,11 +15449,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1627710174}
     m_Modifications:
-    - target: {fileID: 4186646850829335216, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
-        type: 3}
-      propertyPath: _hero
-      value: 
-      objectReference: {fileID: 326928938}
     - target: {fileID: 4186646850829335220, guid: f95eb3d7a1064cb4fa74199fd0cd5204,
         type: 3}
       propertyPath: m_RootOrder
