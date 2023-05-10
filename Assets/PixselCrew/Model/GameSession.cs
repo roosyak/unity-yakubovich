@@ -11,6 +11,8 @@ namespace PixselCrew.Model
         // сохраненное состояние героя
         private PlayerData _save;
 
+        public QuickInventoryModel QuickInventory { get; private set; }
+
         private void Awake()
         {
             LoadHud();
@@ -22,9 +24,16 @@ namespace PixselCrew.Model
             }
             else
             {
+                Save();
+                InitModel();
                 // помещаем объект в «хранилище» которое не удаляется между сценами 
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void InitModel()
+        {
+           QuickInventory = new QuickInventoryModel(Data);
         }
 
         private void LoadHud()

@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 409331824}
   - component: {fileID: 409331826}
   - component: {fileID: 409331825}
+  - component: {fileID: 409331827}
   m_Layer: 5
   m_Name: QuickInventory
   m_TagString: Untagged
@@ -369,6 +370,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409331823}
   m_CullTransparentMesh: 0
+--- !u!114 &409331827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409331823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292f46c2850a68f4082abbf8d40b8c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _conteiner: {fileID: 1764714636}
+  _prefab: {fileID: 1656756262}
 --- !u!1 &668280268
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,13 +770,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1656756261}
+  - component: {fileID: 1656756262}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1656756261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -779,11 +795,26 @@ RectTransform:
   m_Father: {fileID: 1764714636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10.5, y: -12.5}
   m_SizeDelta: {x: 13, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1656756262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656756260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e436dd84593094a48b2a990505f2e92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 2011249775}
+  _selection: {fileID: 269595435}
+  _value: {fileID: 1030539490}
 --- !u!1 &1764714635
 GameObject:
   m_ObjectHideFlags: 0

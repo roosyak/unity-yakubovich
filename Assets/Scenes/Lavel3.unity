@@ -7696,7 +7696,8 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory: []
-    Hp: 5
+    Hp:
+      _value: 0
 --- !u!1001 &430618036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7960,7 +7961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.245644, y: -8.315662, z: -501.1953}
+  m_LocalPosition: {x: -2.815926, y: -8.323013, z: -501.1953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1755193649}
