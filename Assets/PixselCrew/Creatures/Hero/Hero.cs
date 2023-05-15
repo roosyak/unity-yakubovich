@@ -2,6 +2,8 @@
 using UnityEngine;
 using PixselCrew.Model;
 using PixselCrew.Utils;
+using System;
+
 namespace PixselCrew.Creatures
 {
     public class Hero : Creature, ICanAddInInventory
@@ -19,6 +21,7 @@ namespace PixselCrew.Creatures
         [Space]
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticle;
+        [SerializeField] private SpawnComponent _throwSpawner;
 
         private static int ThrowKey = Animator.StringToHash("throw");
 
@@ -31,17 +34,32 @@ namespace PixselCrew.Creatures
         private bool _allDoubleJump;
 
         private const string idCoin = "Coin";
-        private const string idSword = "Sword";
+        private const string SwordId = "Sword";
 
         private int CoinsCount => _session.Data.Inventory.Count(idCoin);
-        private int SwordCount => _session.Data.Inventory.Count(idSword);
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
+
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        private bool CanThrow
+        {
+            get
+            {
+                // если мечь последний, не можем кидаться 
+                if (SelectedItemId == SwordId)
+                    return SwordCount > 1;
+
+                // выбранный предмет которым можно кидаться 
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
 
         protected override void Awake()
         {
             base.Awake();
         }
 
-        public void UsePotion()
+        /*public void UsePotion()
         {
             var potionCount = _session.Data.Inventory.Count("HealthPotion");
             if (potionCount > 0)
@@ -49,7 +67,7 @@ namespace PixselCrew.Creatures
                 _session.Data.Hp.Value += 7;
                 _session.Data.Inventory.Remove("HealthPotion", 1);
             }
-        }
+        }*/
 
         private void Start()
         {
@@ -69,24 +87,30 @@ namespace PixselCrew.Creatures
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == idSword)
+            if (id == SwordId)
                 UpdateHeroWeapon();
         }
         public void Throw()
         {
-            if (_throwCoolDown.IsReady)
-                if (ArmDec())
-                {
-                    Animator.SetTrigger(ThrowKey);
-                    Sounds.Play("Sword");
-                    _throwCoolDown.Reset();
-                }
+            if (_throwCoolDown.IsReady && CanThrow)
+            {
+                Animator.SetTrigger(ThrowKey);
+                Sounds.Play("Sword");
+                _throwCoolDown.Reset();
+            }
         }
 
         public void OnDoThrow()
         {
             Sounds.Play("Range");
-            _particles.Spawn("Throw");
+
+            // текущий выбранный предмет 
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            // можно ли его кинуть 
+            var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+            _throwSpawner.SetPrefab(throwableDef.Projectile);
+            _throwSpawner.Spawn();
+            _session.Data.Inventory.Remove(throwableId, 1);
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -228,29 +252,21 @@ namespace PixselCrew.Creatures
         {
             //_session.Data.Arms++;
 
-            _session.Data.Inventory.Add(idSword, 1);
+            _session.Data.Inventory.Add(SwordId, 1);
             //Debug.Log(string.Format("Arms: {0}", _session.Data.Arms));
         }
 
-        private bool ArmDec()
-        {
-            //if (_session.Data.Arms > 1)
-            if (SwordCount > 1)
-            {
-                // _session.Data.Arms--;
-
-                _session.Data.Inventory.Remove(idSword, 1);
-                //Debug.Log(string.Format("Arms: {0}", _session.Data.Arms));
-                return true;
-            }
-            return false;
-        }
 
         private void UpdateHeroWeapon()
         {
 
             Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
 
+        }
+        // слудующий лемент выстрого инвенторя 
+        public void NextItem()
+        {
+            _session.QuickInventory.SetNextItem();
         }
     }
 

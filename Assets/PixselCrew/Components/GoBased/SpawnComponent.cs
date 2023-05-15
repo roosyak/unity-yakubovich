@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Создание префаба в игре в заданной позиции 
@@ -15,5 +16,11 @@ public class SpawnComponent : MonoBehaviour
 
         // присваеваем значения «мира» (а не относительные) 
         instante.transform.localScale = _target.lossyScale;
+    }
+
+    public void SetPrefab(GameObject prefab)
+    {
+        _prefab = prefab;
+
     }
 }

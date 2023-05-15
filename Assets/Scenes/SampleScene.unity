@@ -7698,10 +7698,8 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Coin
+      - Id: PearlProjectile
         Value: 30
-      - Id: Sword
-        Value: 10
       - Id: Key
         Value: 1
     Hp:
@@ -8203,7 +8201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4199672, y: -8.75746, z: -501.1953}
+  m_LocalPosition: {x: -0.46671724, y: -12.113989, z: -501.1953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1755193649}
@@ -18855,11 +18853,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1534133480}
     m_Modifications:
-    - target: {fileID: 2212874502979765156, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
-        type: 3}
-      propertyPath: _source
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7411152342109114259, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
         type: 3}
       propertyPath: m_RootOrder
@@ -18920,6 +18913,11 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2039447605}
+    - target: {fileID: 7411152342109114261, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d3de3205876bd2d4f9f182252fb5ba96, type: 2}
     - target: {fileID: 7411152342109114269, guid: 3a17ac4702c444749bf7cf1b3d8ded9d,
         type: 3}
       propertyPath: m_Name
@@ -19031,12 +19029,12 @@ PrefabInstance:
     - target: {fileID: 8948000689884998541, guid: a5bc79c3feff2b649a4977ea885c70aa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: 10.68
       objectReference: {fileID: 0}
     - target: {fileID: 8948000689884998541, guid: a5bc79c3feff2b649a4977ea885c70aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.93
+      value: -7.21
       objectReference: {fileID: 0}
     - target: {fileID: 8948000689884998541, guid: a5bc79c3feff2b649a4977ea885c70aa,
         type: 3}
