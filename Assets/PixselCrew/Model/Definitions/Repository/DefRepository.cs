@@ -10,6 +10,9 @@ namespace PixselCrew.Model
 
         public TDefType Get(string id)
         {
+            if (string.IsNullOrEmpty(id))
+                return default;
+
             foreach (var item in _collection)
                 if (item.Id == id)
                     return item;

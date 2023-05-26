@@ -37,7 +37,7 @@ namespace PixselCrew
         public void OnThrow(InputAction.CallbackContext context)
         {
             if (context.performed)
-                _hero.Throw();
+                _hero.UseInventory();
         }
 
         // следующий элемент выстрого инвенторя 

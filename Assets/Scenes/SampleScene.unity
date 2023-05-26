@@ -7700,7 +7700,9 @@ MonoBehaviour:
       _inventory:
       - Id: PearlProjectile
         Value: 30
-      - Id: Key
+      - Id: SmallHelthPotion
+        Value: 1
+      - Id: LargeHelthPotion
         Value: 1
     Hp:
       _value: 10
@@ -8201,7 +8203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.46671724, y: -12.113989, z: -501.1953}
+  m_LocalPosition: {x: 0.14804792, y: -12.119549, z: -501.1953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1755193649}

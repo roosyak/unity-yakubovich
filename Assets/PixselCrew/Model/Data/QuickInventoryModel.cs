@@ -21,8 +21,18 @@ namespace PixselCrew.Model
         public event Action OnChanged;
 
         // текущий выбранный элемент 
-        public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
+        // public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
+        public InventoryItemData SelectedItem
+        {
+            get
+            {
+                if (Inventory.Length > 0 && Inventory.Length > SelectedIndex.Value)
+                    return Inventory[SelectedIndex.Value];
+                return default;
+            }
+        }
 
+        public ItemDef SelectedDef => DefsFacade.I.Items.Get(SelectedItem?.Id);
         public QuickInventoryModel(PlayerData data)
         {
             this._data = data;

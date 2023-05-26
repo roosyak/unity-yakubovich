@@ -90,8 +90,34 @@ namespace PixselCrew.Creatures
             if (id == SwordId)
                 UpdateHeroWeapon();
         }
-        public void Throw()
+        public void UseInventory()
         {
+            // для текущего выбранного предмета 
+
+            // если выбранный предмет можно бросить 
+            if (IsSelectedTag(ItemTag.Throwable))
+                PerformThrowing();
+            // если можно применить зелье 
+            else if (IsSelectedTag(ItemTag.Potion))
+                UsePotion();
+
+        }
+
+        private void UsePotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+            _session.Data.Hp.Value += (int)potion.Value;
+            _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        private bool IsSelectedTag(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
+        }
+
+        private void PerformThrowing()
+        {
+
             if (_throwCoolDown.IsReady && CanThrow)
             {
                 Animator.SetTrigger(ThrowKey);

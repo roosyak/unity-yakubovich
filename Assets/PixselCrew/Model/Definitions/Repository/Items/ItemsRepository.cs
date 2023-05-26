@@ -14,7 +14,6 @@ namespace PixselCrew.Model
 
 #if UNITY_EDITOR
         // доступ к списку, только в редакторе 
-        public ItemDef[] ItemsForEditor => _collection;
 #endif
     }
 
@@ -32,7 +31,7 @@ namespace PixselCrew.Model
 
         public bool HasTag(ItemTag tag)
         {
-            return _tags.Contains(tag);
+            return _tags?.Contains(tag) ?? false;
         }
     }
 }

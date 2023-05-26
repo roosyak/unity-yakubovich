@@ -6,8 +6,8 @@ namespace PixselCrew.Model
     /*
      описание того чем можно кидаться 
      */
-    [CreateAssetMenu(menuName = "Defs/ThrowableItemsDef", fileName = "ThrowableItemsDef")]
-    public class ThrowableItemsDef : DefRepository<ThrowableDef>
+    [CreateAssetMenu(menuName = "Defs/Throwable", fileName = "Throwable")]
+    public class ThrowableRepository : DefRepository<ThrowableDef>
     {
         
     }
@@ -18,6 +18,5 @@ namespace PixselCrew.Model
         [SerializeField] private GameObject _projectile;
 
         public string Id => _id;
-        public GameObject Projectile => _projectile;
     }
 }
