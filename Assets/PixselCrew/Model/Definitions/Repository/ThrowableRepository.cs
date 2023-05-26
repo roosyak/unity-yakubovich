@@ -18,5 +18,6 @@ namespace PixselCrew.Model
         [SerializeField] private GameObject _projectile;
 
         public string Id => _id;
+        public GameObject Projectile => _projectile;
     }
 }

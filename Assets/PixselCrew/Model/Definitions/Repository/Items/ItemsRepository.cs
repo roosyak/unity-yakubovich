@@ -14,6 +14,7 @@ namespace PixselCrew.Model
 
 #if UNITY_EDITOR
         // доступ к списку, только в редакторе 
+        public ItemDef[] ItemsForEditor => _collection;
 #endif
     }
 

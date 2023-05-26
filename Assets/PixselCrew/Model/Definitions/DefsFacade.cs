@@ -23,6 +23,7 @@ namespace PixselCrew.Model
 
         public ItemsRepository Items => _items;
         public ThrowableRepository Throwable => _throwableItems;
+        public PotionRepository Potions => _potions;
 
         public PlayerDef Player => _player;
 
