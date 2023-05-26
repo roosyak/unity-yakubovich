@@ -106,8 +106,31 @@ namespace PixselCrew.Creatures
         private void UsePotion()
         {
             var potion = DefsFacade.I.Potions.Get(SelectedItemId);
-            _session.Data.Hp.Value += (int)potion.Value;
+
+            switch (potion.Effect)
+            {
+                case Effect.AddHp:
+                    _session.Data.Hp.Value += (int)potion.Value;
+                    break;
+
+                case Effect.SpeedUp:
+                    _speedUpCoolDown.Value = _speedUpCoolDown.TimeLasts + potion.Time;
+                    _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
+                    _speedUpCoolDown.Reset();
+                    break;
+            }
+
             _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        private readonly Cooldown _speedUpCoolDown = new Cooldown();
+        private float _additionalSpeed;
+
+        protected override float ClaculateSpeed()
+        {
+            if (_speedUpCoolDown.IsReady)
+                _additionalSpeed = 0f;
+            return base.ClaculateSpeed() + _additionalSpeed;
         }
 
         private bool IsSelectedTag(ItemTag tag)
@@ -156,7 +179,7 @@ namespace PixselCrew.Creatures
         /// пересчёт Y координаты 
         /// </summary>
         /// <returns></returns>
-        protected override float CalculateYVilocity()
+        protected override float CalculateYVelocity()
         {
             //var resultY = _rigidbody.velocity.y;
             //var isJumpPressing = _direction.y > 0;
@@ -167,7 +190,7 @@ namespace PixselCrew.Creatures
             // else if (_rigidbody.velocity.y > 0)
             //   resultY += 0.5f;
 
-            return base.CalculateYVilocity();
+            return base.CalculateYVelocity();
         }
 
         /// <summary>

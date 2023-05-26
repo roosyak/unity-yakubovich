@@ -7702,8 +7702,8 @@ MonoBehaviour:
         Value: 30
       - Id: SmallHelthPotion
         Value: 1
-      - Id: LargeHelthPotion
-        Value: 1
+      - Id: SpeedUpPotion
+        Value: 20
     Hp:
       _value: 10
 --- !u!4 &430709352 stripped
@@ -18436,7 +18436,7 @@ PrefabInstance:
     - target: {fileID: 4117541888994363815, guid: 63b33cc306a62a64b8ee8fccd5fa5c4c,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4117541888994363815, guid: 63b33cc306a62a64b8ee8fccd5fa5c4c,
         type: 3}

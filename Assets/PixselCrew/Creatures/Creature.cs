@@ -53,10 +53,10 @@ namespace PixselCrew.Creatures
 
         private void FixedUpdate()
         {
-            var xVilocity = _direction.x * _speed;
-            var yVilocity = CalculateYVilocity();
+            var xVelocity = CalculateXVelocity();
+            var yVelocity = CalculateYVelocity();
 
-            Rigidbody.velocity = new Vector2(xVilocity, yVilocity);
+            Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
             Animator.SetBool(IsGroundKey, IsGrounded);
             Animator.SetFloat(VerticalVilocityKey, Rigidbody.velocity.y);
@@ -65,11 +65,21 @@ namespace PixselCrew.Creatures
             UpdateSpriteDirection(_direction);
         }
 
+        protected virtual float CalculateXVelocity()
+        {
+            return _direction.x * ClaculateSpeed();
+        }
+
+        protected virtual float ClaculateSpeed()
+        {
+            return _speed;
+        }
+
         /// <summary>
         /// пересчёт Y координаты 
         /// </summary>
         /// <returns></returns>
-        protected virtual float CalculateYVilocity()
+        protected virtual float CalculateYVelocity()
         {
             var resultY = Rigidbody.velocity.y;
 
